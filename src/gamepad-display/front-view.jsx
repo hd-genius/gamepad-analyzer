@@ -2,16 +2,11 @@ import { useGamepad } from "../useGamepad";
 
 export const GamepadFrontView = ({index}) => {
     const gamepad = useGamepad(index);
+
     const bottomFaceButton = gamepad.buttons[0];
     const rightFaceButton = gamepad.buttons[1];
     const leftFaceButton = gamepad.buttons[2];
     const topFaceButton = gamepad.buttons[3];
-
-    const leftBumperButton = gamepad.buttons[4];
-    const rightBumperButton = gamepad.buttons[5];
-
-    const leftTrigger = gamepad.buttons[6];
-    const rightTrigger = gamepad.buttons[7];
 
     const selectButton = gamepad.buttons[8];
     const startButton = gamepad.buttons[9];
@@ -26,18 +21,12 @@ export const GamepadFrontView = ({index}) => {
 
     return <div style={{
         display: "flex",
-        "flex-direction": "column"
+        flexDirection: "column"
     }}>
         <span>A &ndash; {bottomFaceButton.value}</span>
         <span>B &ndash; {rightFaceButton.value}</span>
         <span>X &ndash; {leftFaceButton.value}</span>
         <span>Y &ndash; {topFaceButton.value}</span>
-
-        <span>LB &ndash; {leftBumperButton.value}</span>
-        <span>RB &ndash; {rightBumperButton.value}</span>
-
-        <span>LT &ndash; {leftTrigger.value}</span>
-        <span>RT &ndash; {rightTrigger.value}</span>
 
         <span>Select &ndash; {selectButton.value}</span>
         <span>Start &ndash; {startButton.value}</span>
