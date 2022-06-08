@@ -19,6 +19,12 @@ export const GamepadFrontView = ({index}) => {
     const leftDirectionButton = gamepad.buttons[14];
     const rightDirectionButton = gamepad.buttons[15];
 
+    const leftHorizontalAxis = gamepad.axes[0];
+    const leftVerticalAxis = gamepad.axes[1];
+
+    const rightHorizontalAxis = gamepad.axes[2];
+    const rightVerticalAxis = gamepad.axes[3];
+
     return <div style={{
         display: "flex",
         flexDirection: "column"
@@ -38,5 +44,9 @@ export const GamepadFrontView = ({index}) => {
         <span>&darr; &ndash; {bottomDirectionButton.value}</span>
         <span>&larr; &ndash; {leftDirectionButton.value}</span>
         <span>&rarr; &ndash; {rightDirectionButton.value}</span>
+
+        <span>Left &ndash; {leftHorizontalAxis}, {leftVerticalAxis}</span>
+
+        <span>Right &ndash; {rightHorizontalAxis}, {rightVerticalAxis}</span>
     </div>;
 };
