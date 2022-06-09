@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { GamepadDisplay } from "./gamepad-display/gamepad-display";
+import { GamepadDisplay } from "./gamepad-display";
 
 export const DisplayAll = () => {
     const [gamepads, setGamepads] = useState([]);
@@ -8,7 +8,7 @@ export const DisplayAll = () => {
         const updateControllers = () => {
             setGamepads(navigator.getGamepads());
         };
-        
+
         updateControllers();
         const connectedListener = window.addEventListener("gamepadconnected", updateControllers);
         const unconnectedListener = window.addEventListener("gamepaddisconnected", updateControllers);
