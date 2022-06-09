@@ -5,15 +5,14 @@ import {
     LEFT_TRIGGER,
     RIGHT_TRIGGER,
 } from "../../constants";
+import { useButton } from "../../hooks/useButton";
 
-export const TopView = ({gamepadId}) => {
-    const gamepad = useGamepad(gamepadId);
+export const TopView = () => {
+    const leftBumperButton = useButton(LEFT_SHOULDER);
+    const rightBumperButton = useButton(RIGHT_SHOULDER);
 
-    const leftBumperButton = gamepad.buttons[LEFT_SHOULDER];
-    const rightBumperButton = gamepad.buttons[RIGHT_SHOULDER];
-
-    const leftTrigger = gamepad.buttons[LEFT_TRIGGER];
-    const rightTrigger = gamepad.buttons[RIGHT_TRIGGER];
+    const leftTrigger = useButton(LEFT_TRIGGER);
+    const rightTrigger = useButton(RIGHT_TRIGGER);
 
     return <div style={{
         display: "flex",

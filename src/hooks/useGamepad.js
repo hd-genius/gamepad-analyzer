@@ -1,6 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { GamepadContext } from "../contexts";
 
-export const useGamepad = (id) => {
+export const useGamepad = () => {
+    const { id } = useContext(GamepadContext);
+
     const findGamepad = () => navigator.getGamepads().filter(x => x).filter(x => x.id === id)[0];
 
     const [lastUpdate, setLastUpdate] = useState(0);

@@ -2,13 +2,14 @@ import { FrontView } from "./front-view";
 import { TopView } from "./top-view";
 import styles from "./gamepad-display.module.css";
 import { useGamepad } from "../../hooks";
+import { GamepadContext } from "../../contexts";
 
 export const GamepadDisplay = ({ gamepadId }) => {
-    const gamepad = useGamepad(gamepadId);
-    return <div className={styles.gamepadDisplay}>
-        <span>Gamepad {gamepad.index + 1}</span>
-        <FrontView gamepadId={gamepadId} />
-        <TopView gamepadId={gamepadId} />
-        <button type="button">Advanced</button>
-    </div>;
+    return <GamepadContext.Provider value={{ id: gamepadId }}>
+        <div className={styles.gamepadDisplay}>
+            <FrontView />
+            <TopView />
+            <button type="button">Advanced</button>
+        </div>;
+    </GamepadContext.Provider> 
 };

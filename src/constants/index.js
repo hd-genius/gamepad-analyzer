@@ -16,3 +16,7 @@ export {
     LEFT_TRIGGER,
     RIGHT_TRIGGER,
 } from "./buttons";
+export {
+    LEFT,
+    RIGHT,
+} from "./joysticks";

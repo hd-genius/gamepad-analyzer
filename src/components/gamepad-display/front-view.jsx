@@ -13,7 +13,11 @@ import {
     START,
     LEFT_STICK,
     RIGHT_STICK,
+    LEFT,
+    RIGHT,
 } from "../../constants";
+import { useButton } from "../../hooks/useButton";
+import { useJoystick } from "../../hooks/useJoystick";
 
 const blackOutline = {
     stroke: "#000000",
@@ -39,30 +43,25 @@ const pressedStyles = {
     fillOpacity: 1,
 };
 
-export const FrontView = ({ gamepadId }) => {
-    const gamepad = useGamepad(gamepadId);
+export const FrontView = () => {
+    const bottomFaceButton = useButton(BOTTOM_FACE);
+    const rightFaceButton = useButton(RIGHT_FACE);
+    const leftFaceButton = useButton(LEFT_FACE);
+    const topFaceButton = useButton(TOP_FACE);
 
-    const bottomFaceButton = gamepad.buttons[BOTTOM_FACE];
-    const rightFaceButton = gamepad.buttons[RIGHT_FACE];
-    const leftFaceButton = gamepad.buttons[LEFT_FACE];
-    const topFaceButton = gamepad.buttons[TOP_FACE];
+    const selectButton = useButton(SELECT);
+    const startButton = useButton(START);
 
-    const selectButton = gamepad.buttons[SELECT];
-    const startButton = gamepad.buttons[START];
+    const leftStickButton = useButton(LEFT_STICK);
+    const rightStickButton = useButton(RIGHT_STICK);
 
-    const leftStickButton = gamepad.buttons[LEFT_STICK];
-    const rightStickButton = gamepad.buttons[RIGHT_STICK];
+    const topDirectionButton = useButton(UP_PAD);
+    const bottomDirectionButton = useButton(DOWN_PAD);
+    const leftDirectionButton = useButton(LEFT_PAD);
+    const rightDirectionButton = useButton(RIGHT_PAD);
 
-    const topDirectionButton = gamepad.buttons[UP_PAD];
-    const bottomDirectionButton = gamepad.buttons[DOWN_PAD];
-    const leftDirectionButton = gamepad.buttons[LEFT_PAD];
-    const rightDirectionButton = gamepad.buttons[RIGHT_PAD];
-
-    const leftHorizontalAxis = gamepad.axes[0];
-    const leftVerticalAxis = gamepad.axes[1];
-
-    const rightHorizontalAxis = gamepad.axes[2];
-    const rightVerticalAxis = gamepad.axes[3];
+    const leftJoystick = useJoystick(LEFT);
+    const rightJoystick = useJoystick(RIGHT);
 
     return <svg
         viewBox="0 0 66.03643 46.065399"
@@ -127,14 +126,14 @@ export const FrontView = ({ gamepadId }) => {
                 x={16.753397}
                 y={13.148405}
                 pressed={leftStickButton.pressed}
-                horizontal={leftHorizontalAxis}
-                vertical={leftVerticalAxis} />
+                horizontal={leftJoystick.x}
+                vertical={leftJoystick.y} />
             <Joystick
                 x={42.405007}
                 y={23.160568}
                 pressed={rightStickButton.pressed}
-                horizontal={rightHorizontalAxis}
-                vertical={rightVerticalAxis} />
+                horizontal={rightJoystick.x}
+                vertical={rightJoystick.y} />
             <MenuButton
                 x={28.90851}
                 y={13.150282}
