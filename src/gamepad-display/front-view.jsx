@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useGamepad } from "../useGamepad";
 
 const blackOutline = {
@@ -118,11 +119,11 @@ export const GamepadFrontView = ({ gamepadId }) => {
                 pressed={rightStickButton.pressed}
                 horizontal={rightHorizontalAxis}
                 vertical={rightVerticalAxis} />
-            <MenuButton x="28.90851"
-                y="13.150282"
+            <MenuButton x={28.90851}
+                y={13.150282}
                 pressed={selectButton.pressed} />
-            <MenuButton x="38.5203265"
-                y="13.150282"
+            <MenuButton x={38.5203265}
+                y={13.150282}
                 pressed={startButton.pressed} />
             <path
                 style={{
@@ -188,6 +189,14 @@ const Joystick = ({ pressed, x, y, horizontal, vertical }) => {
         rx="3.4348307"
         ry="3.5444534" />;
 };
+
+Joystick.propTypes = {
+    pressed: PropTypes.bool,
+    x: PropTypes.number.isRequired,
+    y: PropTypes.number.isRequired,
+    horizontal: PropTypes.number,
+    vertical: PropTypes.number,
+}
 
 Joystick.defaultProps = {
     horizontal: 0,
