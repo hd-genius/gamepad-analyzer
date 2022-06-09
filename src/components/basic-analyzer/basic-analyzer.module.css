@@ -1,11 +1,24 @@
+:root {
+    --drawing-fill-color: white;
+    --drawing-outline-color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --drawing-fill-color: black;
+        --drawing-outline-color: white;
+    }
+}
+
 .gamepadDisplay {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-grow: 1;
 }
 
 .filled {
-    fill: #ffffff;
+    fill: var(--drawing-fill-color);
     fill-opacity: 1;
 }
 
@@ -20,7 +33,7 @@
 }
 
 .outlined {
-    stroke: #000000;
+    stroke: var(--drawing-outline-color);
     stroke-width: 0.264583px;
     stroke-linecap: butt;
     stroke-linejoin: miter;
