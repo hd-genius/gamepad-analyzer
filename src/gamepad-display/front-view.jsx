@@ -94,15 +94,36 @@ export const GamepadFrontView = ({ index }) => {
                 id="path54"
                 transform="translate(-71.602149,-103.38007)"
                 class="UnoptimicedTransforms" />
-            <HomeButton x="33.563824" y="6.4840302" />
-            <FaceButton x="50.772846" y="8.8731289" pressed={topFaceButton.pressed} />
-            <FaceButton x="55.2308185" y="13.4041824" pressed={rightFaceButton.pressed} />
-            <FaceButton x="46.1687105" y="13.3311024" pressed={leftFaceButton.pressed} />
-            <FaceButton x="50.62668249" y="17.4967424" pressed={bottomFaceButton.pressed} />
-            <Joystick x="16.753397" y="13.148405" pressed={leftStickButton.pressed} />
-            <Joystick x="42.405007" y="23.160568" pressed={rightStickButton.pressed} />
-            <MenuButton x="28.90851" y="13.150282" pressed={selectButton.pressed} />
-            <MenuButton x="38.5203265" y="13.150282" pressed={startButton.pressed} />
+            <HomeButton x="33.563824"
+                y="6.4840302" />
+            <FaceButton x="50.772846"
+                y="8.8731289"
+                pressed={topFaceButton.pressed} />
+            <FaceButton x="55.2308185"
+                y="13.4041824"
+                pressed={rightFaceButton.pressed} />
+            <FaceButton x="46.1687105"
+                y="13.3311024"
+                pressed={leftFaceButton.pressed} />
+            <FaceButton x="50.62668249"
+                y="17.4967424"
+                pressed={bottomFaceButton.pressed} />
+            <Joystick x={16.753397}
+                y={13.148405}
+                pressed={leftStickButton.pressed}
+                horizontal={leftHorizontalAxis}
+                vertical={leftVerticalAxis} />
+            <Joystick x={42.405007}
+                y={23.160568}
+                pressed={rightStickButton.pressed}
+                horizontal={rightHorizontalAxis}
+                vertical={rightVerticalAxis} />
+            <MenuButton x="28.90851"
+                y="13.150282"
+                pressed={selectButton.pressed} />
+            <MenuButton x="38.5203265"
+                y="13.150282"
+                pressed={startButton.pressed} />
             <path
                 style={{
                     ...empty,
@@ -124,7 +145,7 @@ const HomeButton = ({ x, y }) => {
         cy={y}
         rx="2.4029541"
         ry="2.2737632" />
-}
+};
 
 const FaceButton = ({ pressed, x, y }) => {
     const statusStyles = pressed ? pressedStyles : {};
@@ -144,17 +165,18 @@ const MenuButton = ({ pressed, x, y }) => {
     const statusStyles = pressed ? pressedStyles : {};
     return <circle
         style={{
-        ...empty,
-        ...blackOutline,
-        ...statusStyles,
+            ...empty,
+            ...blackOutline,
+            ...statusStyles,
         }}
         cx={x}
         cy={y}
         r="1.2919108" />;
-}
+};
 
 const Joystick = ({ pressed, x, y, horizontal, vertical }) => {
     // TODO: add position display logic
+    const movementScale = 1.5;
     const statusStyles = pressed ? pressedStyles : {};
     return <ellipse
         style={{
@@ -162,8 +184,13 @@ const Joystick = ({ pressed, x, y, horizontal, vertical }) => {
             ...blackOutline,
             ...statusStyles,
         }}
-        cx={x}
-        cy={y}
+        cx={x + horizontal * movementScale}
+        cy={y + vertical * movementScale}
         rx="3.4348307"
         ry="3.5444534" />;
-}
+};
+
+Joystick.defaultProps = {
+    horizontal: 0,
+    vertical: 0,
+};
