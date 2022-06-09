@@ -39,7 +39,7 @@ const pressedStyles = {
     fillOpacity: 1,
 };
 
-export const GamepadFrontView = ({ gamepadId }) => {
+export const FrontView = ({ gamepadId }) => {
     const gamepad = useGamepad(gamepadId);
 
     const bottomFaceButton = gamepad.buttons[BOTTOM_FACE];

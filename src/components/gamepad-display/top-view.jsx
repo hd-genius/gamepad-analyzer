@@ -6,7 +6,7 @@ import {
     RIGHT_TRIGGER,
 } from "../../constants";
 
-export const GamepadTopView = ({gamepadId}) => {
+export const TopView = ({gamepadId}) => {
     const gamepad = useGamepad(gamepadId);
 
     const leftBumperButton = gamepad.buttons[LEFT_SHOULDER];
