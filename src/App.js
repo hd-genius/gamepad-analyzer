@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import { DisplayAll } from './display-all';
+import { DisplayAll } from './components/display-all';
 
 function App() {
   return (

@@ -1,5 +1,19 @@
 import PropTypes from "prop-types";
-import { useGamepad } from "../useGamepad";
+import { useGamepad } from "../../hooks";
+import {
+    BOTTOM_FACE,
+    RIGHT_FACE,
+    TOP_FACE,
+    LEFT_FACE,
+    UP_PAD,
+    RIGHT_PAD,
+    DOWN_PAD,
+    LEFT_PAD,
+    SELECT,
+    START,
+    LEFT_STICK,
+    RIGHT_STICK,
+} from "../../constants";
 
 const blackOutline = {
     stroke: "#000000",
@@ -28,21 +42,21 @@ const pressedStyles = {
 export const GamepadFrontView = ({ gamepadId }) => {
     const gamepad = useGamepad(gamepadId);
 
-    const bottomFaceButton = gamepad.buttons[0];
-    const rightFaceButton = gamepad.buttons[1];
-    const leftFaceButton = gamepad.buttons[2];
-    const topFaceButton = gamepad.buttons[3];
+    const bottomFaceButton = gamepad.buttons[BOTTOM_FACE];
+    const rightFaceButton = gamepad.buttons[RIGHT_FACE];
+    const leftFaceButton = gamepad.buttons[LEFT_FACE];
+    const topFaceButton = gamepad.buttons[TOP_FACE];
 
-    const selectButton = gamepad.buttons[8];
-    const startButton = gamepad.buttons[9];
+    const selectButton = gamepad.buttons[SELECT];
+    const startButton = gamepad.buttons[START];
 
-    const leftStickButton = gamepad.buttons[10];
-    const rightStickButton = gamepad.buttons[11];
+    const leftStickButton = gamepad.buttons[LEFT_STICK];
+    const rightStickButton = gamepad.buttons[RIGHT_STICK];
 
-    const topDirectionButton = gamepad.buttons[12];
-    const bottomDirectionButton = gamepad.buttons[13];
-    const leftDirectionButton = gamepad.buttons[14];
-    const rightDirectionButton = gamepad.buttons[15];
+    const topDirectionButton = gamepad.buttons[UP_PAD];
+    const bottomDirectionButton = gamepad.buttons[DOWN_PAD];
+    const leftDirectionButton = gamepad.buttons[LEFT_PAD];
+    const rightDirectionButton = gamepad.buttons[RIGHT_PAD];
 
     const leftHorizontalAxis = gamepad.axes[0];
     const leftVerticalAxis = gamepad.axes[1];
@@ -51,13 +65,8 @@ export const GamepadFrontView = ({ gamepadId }) => {
     const rightVerticalAxis = gamepad.axes[3];
 
     return <svg
-        width="66.03643mm"
-        height="46.065399mm"
         viewBox="0 0 66.03643 46.065399"
-        version="1.1"
-        id="svg5">
-        <defs
-            id="defs2" />
+        version="1.1">
         <g
             id="layer1"
             transform="translate(-0.48021528,-0.47886159)">
