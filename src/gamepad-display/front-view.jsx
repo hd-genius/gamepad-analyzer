@@ -95,46 +95,63 @@ export const GamepadFrontView = ({ gamepadId }) => {
                 id="path54"
                 transform="translate(-71.602149,-103.38007)"
                 className="UnoptimicedTransforms" />
-            <HomeButton x={33.563824}
+            <HomeButton
+                x={33.563824}
                 y={6.4840302} />
-            <FaceButton x={50.772846}
+            <FaceButton
+                x={50.772846}
                 y={8.8731289}
                 pressed={topFaceButton.pressed} />
-            <FaceButton x={55.2308185}
+            <FaceButton
+                x={55.2308185}
                 y={13.4041824}
                 pressed={rightFaceButton.pressed} />
-            <FaceButton x={46.1687105}
+            <FaceButton
+                x={46.1687105}
                 y={13.3311024}
                 pressed={leftFaceButton.pressed} />
-            <FaceButton x={50.62668249}
+            <FaceButton
+                x={50.62668249}
                 y={17.4967424}
                 pressed={bottomFaceButton.pressed} />
-            <Joystick x={16.753397}
+            <Joystick
+                x={16.753397}
                 y={13.148405}
                 pressed={leftStickButton.pressed}
                 horizontal={leftHorizontalAxis}
                 vertical={leftVerticalAxis} />
-            <Joystick x={42.405007}
+            <Joystick
+                x={42.405007}
                 y={23.160568}
                 pressed={rightStickButton.pressed}
                 horizontal={rightHorizontalAxis}
                 vertical={rightVerticalAxis} />
-            <MenuButton x={28.90851}
+            <MenuButton
+                x={28.90851}
                 y={13.150282}
                 pressed={selectButton.pressed} />
-            <MenuButton x={38.5203265}
+            <MenuButton
+                x={38.5203265}
                 y={13.150282}
                 pressed={startButton.pressed} />
-            <path
-                style={{
-                    ...empty,
-                    ...blackOutline,
-                }}
-                d="m 26.561666,19.093082 v 3.10058 h 3.094325 c 0,0 0.32886,0.28236 0.32886,1.62464 0,1.34228 -0.32886,1.786 -0.32886,1.786 H 26.47972 v 3.10059 c 0,0 -0.492226,0.19379 -1.498617,0.19379 -1.00639,0 -1.550294,-0.19379 -1.550294,-0.19379 v -3.10059 h -3.307292 c 0,0 -0.354629,-0.25926 -0.356003,-1.71605 -0.0014,-1.45678 0.356003,-1.68519 0.356003,-1.68519 h 3.307292 v -3.10999 c 0,0 0.1609,-0.29232 1.595937,-0.29232 1.435036,0 1.53492,0.29233 1.53492,0.29233 z"
-                id="path3582" />
+            <DirectionalPad
+                up={topDirectionButton.pressed}
+                right={rightDirectionButton.pressed}
+                down={bottomDirectionButton.pressed}
+                left={leftDirectionButton.pressed} />
         </g>
     </svg>;
 };
+
+const DirectionalPad = ({ up, down, left, right }) => {
+    <path
+        style={{
+            ...empty,
+            ...blackOutline,
+        }}
+        d="m 26.561666,19.093082 v 3.10058 h 3.094325 c 0,0 0.32886,0.28236 0.32886,1.62464 0,1.34228 -0.32886,1.786 -0.32886,1.786 H 26.47972 v 3.10059 c 0,0 -0.492226,0.19379 -1.498617,0.19379 -1.00639,0 -1.550294,-0.19379 -1.550294,-0.19379 v -3.10059 h -3.307292 c 0,0 -0.354629,-0.25926 -0.356003,-1.71605 -0.0014,-1.45678 0.356003,-1.68519 0.356003,-1.68519 h 3.307292 v -3.10999 c 0,0 0.1609,-0.29232 1.595937,-0.29232 1.435036,0 1.53492,0.29233 1.53492,0.29233 z"
+        id="path3582" />
+}
 
 const HomeButton = ({ x, y }) => {
     return <ellipse
