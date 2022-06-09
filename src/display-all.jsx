@@ -19,5 +19,5 @@ export const DisplayAll = () => {
         };
     }, []);
 
-    return gamepads.filter(x => x).map((x, index) => <GamepadDisplay key={x.id} index={index} />);
+    return gamepads.filter(x => x).map((x) => <GamepadDisplay key={x.id} gamepadId={x.id} />);
 };

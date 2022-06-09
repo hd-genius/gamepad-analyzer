@@ -24,8 +24,8 @@ const pressedStyles = {
     fillOpacity: 1,
 };
 
-export const GamepadFrontView = ({ index }) => {
-    const gamepad = useGamepad(index);
+export const GamepadFrontView = ({ gamepadId }) => {
+    const gamepad = useGamepad(gamepadId);
 
     const bottomFaceButton = gamepad.buttons[0];
     const rightFaceButton = gamepad.buttons[1];
@@ -94,19 +94,19 @@ export const GamepadFrontView = ({ index }) => {
                 id="path54"
                 transform="translate(-71.602149,-103.38007)"
                 class="UnoptimicedTransforms" />
-            <HomeButton x="33.563824"
-                y="6.4840302" />
-            <FaceButton x="50.772846"
-                y="8.8731289"
+            <HomeButton x={33.563824}
+                y={6.4840302} />
+            <FaceButton x={50.772846}
+                y={8.8731289}
                 pressed={topFaceButton.pressed} />
-            <FaceButton x="55.2308185"
-                y="13.4041824"
+            <FaceButton x={55.2308185}
+                y={13.4041824}
                 pressed={rightFaceButton.pressed} />
-            <FaceButton x="46.1687105"
-                y="13.3311024"
+            <FaceButton x={46.1687105}
+                y={13.3311024}
                 pressed={leftFaceButton.pressed} />
-            <FaceButton x="50.62668249"
-                y="17.4967424"
+            <FaceButton x={50.62668249}
+                y={17.4967424}
                 pressed={bottomFaceButton.pressed} />
             <Joystick x={16.753397}
                 y={13.148405}
@@ -175,7 +175,6 @@ const MenuButton = ({ pressed, x, y }) => {
 };
 
 const Joystick = ({ pressed, x, y, horizontal, vertical }) => {
-    // TODO: add position display logic
     const movementScale = 1.5;
     const statusStyles = pressed ? pressedStyles : {};
     return <ellipse

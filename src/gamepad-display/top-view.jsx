@@ -1,7 +1,7 @@
 import { useGamepad } from "../useGamepad";
 
-export const GamepadTopView = ({index}) => {
-    const gamepad = useGamepad(index);
+export const GamepadTopView = ({gamepadId}) => {
+    const gamepad = useGamepad(gamepadId);
 
     const leftBumperButton = gamepad.buttons[4];
     const rightBumperButton = gamepad.buttons[5];
