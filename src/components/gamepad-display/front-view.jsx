@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import { useGamepad } from "../../hooks";
 import {
     BOTTOM_FACE,
     RIGHT_FACE,
