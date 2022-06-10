@@ -17,6 +17,10 @@
     flex-grow: 1;
 }
 
+.gamepadView {
+    max-width: 140mm;
+}
+
 .filled {
     fill: var(--drawing-fill-color);
     fill-opacity: 1;

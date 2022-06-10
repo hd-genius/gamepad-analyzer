@@ -17,11 +17,8 @@ export const TopView = () => {
     const rightTrigger = useButton(RIGHT_TRIGGER);
 
     return <svg
-        width="138.46764mm"
-        height="58.538776mm"
-        viewBox="0 0 138.46764 58.538776"
-        version="1.1"
-        id="svg12717">
+        className={styles.gamepadView}
+        viewBox="0 0 138.46764 58.538776" >
         <g
             id="layer1"
             transform="translate(-0.86947183,-0.33617702)">
