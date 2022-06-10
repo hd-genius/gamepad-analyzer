@@ -1,10 +1,8 @@
 import './App.css';
-import { DisplayAll } from './components/display-all';
+import { GamepadDisplay } from './components/gamepad-display';
 
 function App() {
-  return (
-    <DisplayAll />
-  );
+  return <GamepadDisplay />;
 }
 
 export default App;
