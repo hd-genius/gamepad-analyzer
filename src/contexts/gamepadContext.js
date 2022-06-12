@@ -1,5 +1,7 @@
 import { createContext } from "react";
 
 export const GamepadContext = createContext({
-    id: ""
+    id: "",
+    selectGamepad: () => {},
+    selectAnalyzer: () => {},
 });
