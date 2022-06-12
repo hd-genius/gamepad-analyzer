@@ -38,12 +38,17 @@ export const GamepadDisplay = () => {
 
     const connectedGamepads = gamepads.filter(x => x);
 
-    return <>
-        {<GamepadContext.Provider value={{ id: currentGamepadId }}>
+    const hasGamepadConnected = connectedGamepads.length > 0;
+
+    if (hasGamepadConnected) {
+        return <GamepadContext.Provider value={{ id: currentGamepadId }}>
             <select onChange={e => setCurrentGamepadId(e.target.value)}>
                 {connectedGamepads.map(gamepad => <option value={gamepad.id} key={gamepad.id}>Gamepad {gamepad.index}</option>)}
             </select>
             {isGamepadSelected && <BasicAnalyzer />}
-        </GamepadContext.Provider>}
-    </>;
+        </GamepadContext.Provider>;
+    } else {
+        return <span>No gamepads detected.</span>
+    }
+
 };
