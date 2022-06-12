@@ -1,1 +1,1 @@
-export { BasicAnalyzer as GamepadDisplay } from "./basic-analyzer";
+export { BasicAnalyzer } from "./basic-analyzer";

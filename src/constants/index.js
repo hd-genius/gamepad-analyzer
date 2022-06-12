@@ -20,3 +20,5 @@ export {
     LEFT,
     RIGHT,
 } from "./joysticks";
+
+export * as Analyzers from "./analyzers";
