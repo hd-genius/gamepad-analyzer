@@ -1,10 +1,11 @@
-import { BasicAnalyzer } from "./basic-analyzer"
 import { GamepadContext } from "../contexts";
 import { useState } from "react";
 import { useAllGamepads } from "../hooks";
 import { Toolbar } from "./toolbar";
 import { Analyzers } from "../constants";
+import { BasicAnalyzer } from "./basic-analyzer"
 import { JoystickAnalyzer } from "./joystick-analyzer";
+import { TriggerAnalyzer } from "./trigger-analyzer";
 import styles from "./gamepad-display.module.css";
 
 export const GamepadDisplay = () => {
@@ -39,7 +40,7 @@ const resolveAnalyzer = type => {
             return BasicAnalyzer;
         case Analyzers.JOYSTICK:
             return JoystickAnalyzer;
-        default:
-            return BasicAnalyzer;
+        case Analyzers.TRIGGER:
+            return TriggerAnalyzer;
     }
 };

@@ -32,6 +32,7 @@ export const Toolbar = () => {
         <select className={styles.dropdown} value={analyzerType} onChange={e => selectAnalyzer(parseInt(e.target.value))}>
             <option value={Analyzers.BASIC}>Basic</option>
             <option value={Analyzers.JOYSTICK}>Joystick</option>
+            <option value={Analyzers.TRIGGER}>Trigger</option>
         </select>
     </div>;
 };
