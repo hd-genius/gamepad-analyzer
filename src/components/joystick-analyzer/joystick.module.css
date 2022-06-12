@@ -1,0 +1,23 @@
+.filled {
+    fill: var(--drawing-fill-color);
+    fill-opacity: 1;
+}
+
+.empty {
+    fill: none;
+    fill-opacity: 1;
+}
+
+.pressed {
+    fill: red;
+    fill-opacity: 1;
+}
+
+.outlined {
+    stroke: var(--drawing-outline-color);
+    stroke-width: 0.264583px;
+    stroke-linecap: butt;
+    stroke-linejoin: miter;
+    stroke-dasharray: none;
+    stroke-opacity: 1;
+}
