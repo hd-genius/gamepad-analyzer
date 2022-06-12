@@ -1,26 +1,11 @@
 import { BasicAnalyzer } from "./basic-analyzer/basic-analyzer"
 import { GamepadContext } from "../contexts";
 import { useEffect, useState } from "react";
+import { useAllGamepads } from "../hooks";
 
 export const GamepadDisplay = () => {
-    const [gamepads, setGamepads] = useState([]);
+    const gamepads = useAllGamepads();
     const [currentGamepadId, setCurrentGamepadId] = useState(null);
-
-    useEffect(() => {
-        const updateControllers = () => {
-            const connectedGamepads = navigator.getGamepads().filter(x => x);
-            setGamepads(connectedGamepads);
-        };
-
-        updateControllers();
-        window.addEventListener("gamepadconnected", updateControllers);
-        window.addEventListener("gamepaddisconnected", updateControllers);
-
-        return () => {
-            window.removeEventListener("gamepadconnected", updateControllers);
-            window.removeEventListener("gamepaddisconnected", updateControllers);
-        };
-    }, []);
 
     useEffect(() => {
         const connectedGamepads = gamepads.filter(x => x);
@@ -32,15 +17,15 @@ export const GamepadDisplay = () => {
                 setCurrentGamepadId(null);
             }
         }
-    }, [gamepads]);
-
-    const isGamepadSelected = currentGamepadId !== null;
+    }, [gamepads. currentGamepadId]);
 
     const connectedGamepads = gamepads.filter(x => x);
 
     const hasGamepadConnected = connectedGamepads.length > 0;
 
     if (hasGamepadConnected) {
+        const isGamepadSelected = currentGamepadId !== null;
+
         return <GamepadContext.Provider value={{ id: currentGamepadId }}>
             <select onChange={e => setCurrentGamepadId(e.target.value)}>
                 {connectedGamepads.map(gamepad => <option value={gamepad.id} key={gamepad.id}>Gamepad {gamepad.index}</option>)}
