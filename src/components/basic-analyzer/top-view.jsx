@@ -17,7 +17,6 @@ export const TopView = () => {
     const rightTrigger = useButton(RIGHT_TRIGGER);
 
     return <svg
-        className={styles.gamepadView}
         viewBox="0 0 138.46764 58.538776" >
         <g
             id="layer1"

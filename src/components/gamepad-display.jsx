@@ -5,6 +5,7 @@ import { useAllGamepads } from "../hooks";
 import { Toolbar } from "./toolbar";
 import { Analyzers } from "../constants";
 import { JoystickAnalyzer } from "./joystick-analyzer";
+import styles from "./gamepad-display.module.css";
 
 export const GamepadDisplay = () => {
     const gamepads = useAllGamepads();
@@ -22,8 +23,10 @@ export const GamepadDisplay = () => {
             selectAnalyzer: type => setAnalyzerType(type),
             analyzerType,
         }}>
-            <Toolbar />
-            {currentGamepadId !== null && <AnalyzerComponent />}
+            <div className={styles.gamepadDisplay}>
+                <Toolbar />
+                {currentGamepadId !== null && <AnalyzerComponent />}
+            </div>
         </GamepadContext.Provider>;
     } else {
         return <span>No gamepads detected.</span>

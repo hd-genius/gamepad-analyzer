@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { Analyzers } from "../constants";
 import { GamepadContext } from "../contexts";
 import { useAllGamepads } from "../hooks";
+import styles from "./toolbar.module.css";
 
 export const Toolbar = () => {
     const gamepads = useAllGamepads();
@@ -22,13 +23,13 @@ export const Toolbar = () => {
         if (!isGamepadStillConnected) {
             selectDefaultGamepad();
         }
-    }, [gamepads. id]);
+    }, [gamepads, id]);
 
-    return <div>
-        <select onChange={e => selectGamepad(e.target.value)}>
-            {gamepads.map(gamepad => <option value={gamepad.id} key={gamepad.id}>Gamepad {gamepad.index}</option>)}
+    return <div className={styles.toolbar}>
+        <select className={styles.dropdown} onChange={e => selectGamepad(e.target.value)}>
+            {gamepads.map(gamepad => <option value={gamepad.id} key={gamepad.id}>Gamepad {gamepad.index + 1}</option>)}
         </select>
-        <select value={analyzerType} onChange={e => selectAnalyzer(parseInt(e.target.value))}>
+        <select className={styles.dropdown} value={analyzerType} onChange={e => selectAnalyzer(parseInt(e.target.value))}>
             <option value={Analyzers.BASIC}>Basic</option>
             <option value={Analyzers.JOYSTICK}>Joystick</option>
         </select>

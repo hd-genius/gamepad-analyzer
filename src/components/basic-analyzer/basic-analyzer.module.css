@@ -10,15 +10,11 @@
     }
 }
 
-.gamepadDisplay {
+.analyzer {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-grow: 1;
-}
-
-.gamepadView {
-    max-width: 140mm;
 }
 
 .filled {

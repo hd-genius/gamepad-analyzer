@@ -21,3 +21,11 @@
     stroke-dasharray: none;
     stroke-opacity: 1;
 }
+
+.joystick {
+    flex-grow: 1;
+}
+
+.analyzer {
+    display: flex;
+}

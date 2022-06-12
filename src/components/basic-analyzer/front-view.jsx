@@ -41,7 +41,6 @@ export const FrontView = () => {
     const rightJoystick = useJoystick(RIGHT);
 
     return <svg
-        className={styles.gamepadView}
         viewBox="0 0 66.03643 46.065399"
         version="1.1">
         <g
