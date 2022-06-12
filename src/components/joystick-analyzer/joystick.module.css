@@ -23,7 +23,8 @@
 }
 
 .joystick {
-    flex-grow: 1;
+    width: calc(100% - 2em);
+    margin: 1em;
 }
 
 .analyzer {
