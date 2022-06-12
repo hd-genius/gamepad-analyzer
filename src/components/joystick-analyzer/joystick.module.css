@@ -1,16 +1,9 @@
 .filled {
+    fill: var(--drawing-outline-color);
+}
+
+.outlined:not(.filled) {
     fill: var(--drawing-fill-color);
-    fill-opacity: 1;
-}
-
-.empty {
-    fill: none;
-    fill-opacity: 1;
-}
-
-.pressed {
-    fill: red;
-    fill-opacity: 1;
 }
 
 .outlined {
@@ -20,13 +13,22 @@
     stroke-linejoin: miter;
     stroke-dasharray: none;
     stroke-opacity: 1;
+    fill-opacity: 1;
 }
 
 .joystick {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 1;
+}
+
+.joystickDisplay {
     width: calc(100% - 2em);
     margin: 1em;
 }
 
 .analyzer {
     display: flex;
+    flex-wrap: wrap;
 }

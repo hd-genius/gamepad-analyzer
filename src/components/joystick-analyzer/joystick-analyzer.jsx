@@ -8,7 +8,7 @@ export const JoystickAnalyzer = () => {
     const rightJoystick = useJoystick(RIGHT);
 
     return <div className={styles.analyzer}>
-        <Joystick horizontal={leftJoystick.x} vertical={leftJoystick.y} />
-        <Joystick horizontal={rightJoystick.x} vertical={rightJoystick.y} />
+        <Joystick name="Left Joystick" horizontal={leftJoystick.x} vertical={leftJoystick.y} />
+        <Joystick name="Right Joystick" horizontal={rightJoystick.x} vertical={rightJoystick.y} />
     </div>;
 };
