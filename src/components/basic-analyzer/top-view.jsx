@@ -5,7 +5,7 @@ import {
     RIGHT_TRIGGER,
 } from "../../constants";
 import PropTypes from "prop-types";
-import { useButton } from "../../hooks/useButton";
+import { useButton } from "../../hooks";
 import styles from "./basic-analyzer.module.css";
 import classNames from "classnames";
 

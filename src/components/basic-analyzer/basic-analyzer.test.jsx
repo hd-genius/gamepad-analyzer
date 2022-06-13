@@ -1,11 +1,32 @@
-describe("GamepadDisplay", () => {
-    it.todo("should show when the A button is pressed");
+import { render, screen } from "@testing-library/react";
+import { BasicAnalyzer } from "./basic-analyzer";
+import { useButton, useJoystick } from "../../hooks";
+import { BOTTOM_FACE, RIGHT_FACE, LEFT_FACE, TOP_FACE } from "../../constants";
+import styles from "./basic-analyzer.module.css";
 
-    it.todo("should show when the B button is pressed");
+jest.mock("../../hooks");
 
-    it.todo("should show when the X button is pressed");
+describe("BasicAnalyzer", () => {
+    beforeEach(() => {
+        useButton.mockReset();
+        useButton.mockReturnValue({});
 
-    it.todo("should show when the Y button is pressed");
+        useJoystick.mockReset();
+        useJoystick.mockReturnValue({});
+    });
+
+    it.each([
+        ["bottom face button", BOTTOM_FACE, "bottom-face-button"],
+        ["right face button", RIGHT_FACE, "right-face-button"],
+        ["left face button", LEFT_FACE, "left-face-button"],
+        ["top face button", TOP_FACE, "top-face-button"],
+    ])("should show when the %s is pressed", (name, index, testId) => {
+        useButton.mockImplementation((button) => button === index ? {
+            pressed: true,
+        } : {});
+        render(<BasicAnalyzer />);
+        expect(screen.getByTestId(testId)).toHaveClass(styles.pressed);
+    });
 
     it.todo("should show when the up directional button is pressed");
 

@@ -17,8 +17,7 @@ import {
     RIGHT,
 } from "../../constants";
 import styles from "./basic-analyzer.module.css";
-import { useButton } from "../../hooks/useButton";
-import { useJoystick } from "../../hooks/useJoystick";
+import { useButton, useJoystick } from "../../hooks";
 
 export const FrontView = () => {
     const bottomFaceButton = useButton(BOTTOM_FACE);
@@ -73,21 +72,25 @@ export const FrontView = () => {
                     x={50.772846}
                     y={8.8731289}
                     pressed={topFaceButton.pressed}
+                    testId="top-face-button"
                 />
                 <FaceButton
                     x={55.2308185}
                     y={13.4041824}
                     pressed={rightFaceButton.pressed}
+                    testId="right-face-button"
                 />
                 <FaceButton
                     x={46.1687105}
                     y={13.3311024}
                     pressed={leftFaceButton.pressed}
+                    testId="left-face-button"
                 />
                 <FaceButton
                     x={50.62668249}
                     y={17.4967424}
                     pressed={bottomFaceButton.pressed}
+                    testId="bottom-face-button"
                 />
                 <Joystick
                     x={16.753397}
@@ -145,12 +148,13 @@ const HomeButton = ({ x, y }) => {
     );
 };
 
-const FaceButton = ({ pressed, x, y }) => {
+const FaceButton = ({ pressed, x, y, testId }) => {
     return (
         <ellipse
             className={classNames(styles.empty, styles.outlined, {
                 [styles.pressed]: pressed,
             })}
+            data-testid={testId}
             cx={x}
             cy={y}
             rx="2.1559045"
