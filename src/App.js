@@ -1,5 +1,5 @@
-import './App.css';
-import { GamepadDisplay } from './components/gamepad-display';
+import "./App.css";
+import { GamepadDisplay } from "./components/gamepad-display";
 
 function App() {
   return <GamepadDisplay />;

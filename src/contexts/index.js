@@ -1,1 +1,1 @@
-export { GamepadContext } from "./gamepadContext"
+export { GamepadContext } from "./gamepadContext";

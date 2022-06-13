@@ -1,22 +1,22 @@
 :root {
-    --background-color: white;
-    --text-color: black;
+  --background-color: white;
+  --text-color: black;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --background-color: black;
-        --text-color: white;
-    }
+  :root {
+    --background-color: black;
+    --text-color: white;
+  }
 }
 
 #root {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
