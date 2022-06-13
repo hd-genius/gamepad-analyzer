@@ -30,7 +30,7 @@ export const GamepadDisplay = () => {
             </div>
         </GamepadContext.Provider>;
     } else {
-        return <span>No gamepads detected.</span>
+        return <span>No gamepads detected</span>
     }
 };
 
