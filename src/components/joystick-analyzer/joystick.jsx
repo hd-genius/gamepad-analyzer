@@ -2,7 +2,10 @@ import classNames from "classnames";
 import styles from "./joystick.module.css";
 
 export const Joystick = ({ name, horizontal, vertical }) => {
-    const movementScale = 50;
+    const positionRadius = 4;
+    const movementAreaRadius = 50;
+    const renderWidth = (movementAreaRadius + positionRadius) * 2;
+    const midpoint = renderWidth / 2;
     return <div className={styles.joystick}>
         <table className={styles.joystickDetails}>
             <caption>{name}</caption>
@@ -15,11 +18,15 @@ export const Joystick = ({ name, horizontal, vertical }) => {
                 <td>{vertical}</td>
             </tr>
         </table>
-        <svg className={styles.joystickDisplay} viewBox="0 0 100 100" width="12em">
-            <circle cx={50} cy={50} className={styles.outlined} r={50} />
-            <line className={styles.outlined} x1={0} x2={100} y1={50} y2={50} />
-            <line className={styles.outlined} x1={50} x2={50} y1={0} y2={100} />
-            <circle cx={50 + movementScale * horizontal} cy={50 + movementScale * vertical} className={classNames(styles.outlined, styles.filled)} r={4} />
+        <svg className={styles.joystickDisplay} viewBox={`0 0 ${renderWidth} ${renderWidth}`} width="12em">
+            <circle cx={midpoint} cy={midpoint} className={styles.outlined} r={movementAreaRadius} />
+            <line className={styles.outlined} x1={positionRadius} x2={renderWidth - positionRadius} y1={midpoint} y2={midpoint} />
+            <line className={styles.outlined} x1={midpoint} x2={midpoint} y1={positionRadius} y2={renderWidth - positionRadius} />
+            <circle
+                cx={midpoint + movementAreaRadius * horizontal}
+                cy={midpoint + movementAreaRadius * vertical}
+                className={classNames(styles.outlined, styles.filled)}
+                r={positionRadius} />
         </svg>
     </div>;
 };
