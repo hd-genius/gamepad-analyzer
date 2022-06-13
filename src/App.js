@@ -2,7 +2,7 @@ import "./App.css";
 import { GamepadDisplay } from "./components/gamepad-display";
 
 function App() {
-  return <GamepadDisplay />;
+    return <GamepadDisplay />;
 }
 
 export default App;
