@@ -10,6 +10,7 @@ export const useAllGamepads = () => {
         };
 
         updateControllers();
+        
         window.addEventListener("gamepadconnected", updateControllers);
         window.addEventListener("gamepaddisconnected", updateControllers);
 

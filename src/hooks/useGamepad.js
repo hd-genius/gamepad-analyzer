@@ -1,5 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { GamepadContext } from "../contexts";
+import { useEachFrame } from "./useEachFrame";
 
 export const useGamepad = () => {
     const { id } = useContext(GamepadContext);
@@ -13,28 +14,14 @@ export const useGamepad = () => {
     const [lastUpdate, setLastUpdate] = useState(0);
     const [currentGamepad, setCurrentGamePad] = useState(findGamepad());
 
-    useEffect(() => {
-        let shouldPoll = true;
+    useEachFrame(() => {
+        const gamepad = findGamepad();
 
-        function startPolling() {
-            const gamepad = findGamepad();
-
-            if (gamepad.timestamp > lastUpdate) {
-                setCurrentGamePad(gamepad);
-                setLastUpdate(gamepad.timestamp);
-            }
-
-            if (shouldPoll) {
-                window.requestAnimationFrame(startPolling);
-            }
+        if (gamepad.timestamp > lastUpdate) {
+            setCurrentGamePad(gamepad);
+            setLastUpdate(gamepad.timestamp);
         }
-
-        const stopPolling = () => (shouldPoll = true);
-
-        window.requestAnimationFrame(startPolling);
-
-        return stopPolling;
-    }, []);
+    });
 
     return currentGamepad;
 };
