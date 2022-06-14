@@ -1,5 +1,5 @@
-import { LEFT, RIGHT } from "../../constants";
-import { useJoystick } from "../../hooks";
+import { LEFT, RIGHT } from "../../../constants";
+import { useJoystick } from "../../../hooks";
 import { Joystick } from "./joystick";
 import styles from "./joystick.module.css";
 

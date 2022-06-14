@@ -15,9 +15,9 @@ import {
     RIGHT_STICK,
     LEFT,
     RIGHT,
-} from "../../constants";
+} from "../../../constants";
 import styles from "./basic-analyzer.module.css";
-import { useButton, useJoystick } from "../../hooks";
+import { useButton, useJoystick } from "../../../hooks";
 
 export const FrontView = () => {
     const bottomFaceButton = useButton(BOTTOM_FACE);

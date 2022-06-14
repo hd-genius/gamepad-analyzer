@@ -3,9 +3,9 @@ import {
     RIGHT_SHOULDER,
     LEFT_TRIGGER,
     RIGHT_TRIGGER,
-} from "../../constants";
+} from "../../../constants";
 import PropTypes from "prop-types";
-import { useButton } from "../../hooks";
+import { useButton } from "../../../hooks";
 import styles from "./basic-analyzer.module.css";
 import classNames from "classnames";
 

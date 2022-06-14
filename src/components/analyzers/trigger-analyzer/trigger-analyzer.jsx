@@ -1,5 +1,5 @@
-import { LEFT_TRIGGER, RIGHT_TRIGGER } from "../../constants";
-import { useButton } from "../../hooks";
+import { LEFT_TRIGGER, RIGHT_TRIGGER } from "../../../constants";
+import { useButton } from "../../../hooks";
 
 export const TriggerAnalyzer = () => {
     const leftTrigger = useButton(LEFT_TRIGGER);
