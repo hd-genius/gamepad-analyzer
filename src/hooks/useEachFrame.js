@@ -3,17 +3,15 @@ import { useEffect } from "react";
 export const useEachFrame = (callback) => useEffect(() => {
     let shouldPoll = true;
 
-    function startPolling() {
+    function handleNextFrame() {
         callback();
 
         if (shouldPoll) {
-            window.requestAnimationFrame(startPolling);
+            window.requestAnimationFrame(handleNextFrame);
         }
     }
 
-    const stopPolling = () => (shouldPoll = true);
+    window.requestAnimationFrame(handleNextFrame);
 
-    window.requestAnimationFrame(startPolling);
-
-    return stopPolling;
+    return () => (shouldPoll = false);
 }, [callback]);
