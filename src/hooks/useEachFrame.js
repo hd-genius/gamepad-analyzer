@@ -1,17 +1,19 @@
 import { useEffect } from "react";
 
 export const useEachFrame = (callback) => useEffect(() => {
-    let shouldPoll = true;
+    let shouldContinue = true;
 
     function handleNextFrame() {
         callback();
 
-        if (shouldPoll) {
+        if (shouldContinue) {
             window.requestAnimationFrame(handleNextFrame);
         }
     }
 
     window.requestAnimationFrame(handleNextFrame);
 
-    return () => (shouldPoll = false);
+    return () => {
+        shouldContinue = false;
+    };
 }, [callback]);
