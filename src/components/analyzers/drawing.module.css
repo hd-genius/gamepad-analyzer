@@ -1,0 +1,39 @@
+:root {
+    --drawing-fill-color: white;
+    --drawing-outline-color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --drawing-fill-color: black;
+        --drawing-outline-color: white;
+    }
+}
+
+.filled {
+    fill: var(--drawing-outline-color);
+}
+
+.outlined:not(.filled) {
+    fill: var(--drawing-fill-color);
+}
+
+.outlined {
+    stroke: var(--drawing-outline-color);
+    stroke-width: 0.264583px;
+    stroke-linecap: butt;
+    stroke-linejoin: miter;
+    stroke-dasharray: none;
+    stroke-opacity: 1;
+    fill-opacity: 1;
+}
+
+.empty {
+    fill: none;
+    fill-opacity: 1;
+}
+
+.pressed {
+    fill: red;
+    fill-opacity: 1;
+}

@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import styles from "./joystick.module.css";
+import drawingStyles from "../drawing.module.css";
 
 export const Joystick = ({ name, horizontal, vertical }) => {
     const positionRadius = 4;
@@ -27,18 +28,18 @@ export const Joystick = ({ name, horizontal, vertical }) => {
                 <circle
                     cx={midpoint}
                     cy={midpoint}
-                    className={styles.outlined}
+                    className={drawingStyles.outlined}
                     r={movementAreaRadius}
                 />
                 <line
-                    className={styles.outlined}
+                    className={drawingStyles.outlined}
                     x1={positionRadius}
                     x2={renderWidth - positionRadius}
                     y1={midpoint}
                     y2={midpoint}
                 />
                 <line
-                    className={styles.outlined}
+                    className={drawingStyles.outlined}
                     x1={midpoint}
                     x2={midpoint}
                     y1={positionRadius}
@@ -47,7 +48,7 @@ export const Joystick = ({ name, horizontal, vertical }) => {
                 <circle
                     cx={midpoint + movementAreaRadius * horizontal}
                     cy={midpoint + movementAreaRadius * vertical}
-                    className={classNames(styles.outlined, styles.filled)}
+                    className={classNames(drawingStyles.outlined, drawingStyles.filled)}
                     r={positionRadius}
                 />
             </svg>
