@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import { BasicAnalyzer } from "./basic-analyzer";
-import { useButton, useJoystick } from "../../hooks";
-import { BOTTOM_FACE, RIGHT_FACE, LEFT_FACE, TOP_FACE } from "../../constants";
+import { useButton, useJoystick } from "../../../hooks";
+import { BOTTOM_FACE, RIGHT_FACE, LEFT_FACE, TOP_FACE } from "../../../constants";
 import styles from "./basic-analyzer.module.css";
 
-jest.mock("../../hooks");
+jest.mock("../../../hooks");
 
 describe("BasicAnalyzer", () => {
     beforeEach(() => {
