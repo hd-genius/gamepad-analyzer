@@ -12,6 +12,8 @@ import {
     RIGHT_SHOULDER,
     LEFT_STICK,
     RIGHT_STICK,
+    LEFT_TRIGGER,
+    RIGHT_TRIGGER,
 } from "../../../constants";
 import styles from "../drawing.module.css";
 
@@ -35,6 +37,8 @@ describe("BasicAnalyzer", () => {
         ["start button", START, "start-button"],
         ["left shoulder", LEFT_SHOULDER, "left-shoulder"],
         ["right shoulder", RIGHT_SHOULDER, "right-shoulder"],
+        ["left trigger", LEFT_TRIGGER, "left-trigger"],
+        ["right trigger", RIGHT_TRIGGER, "right-trigger"],
         ["left stick", LEFT_STICK, "left-stick"],
         ["right stick", RIGHT_STICK, "right-stick"],
     ])("should show when the %s is pressed", (name, index, testId) => {
@@ -56,8 +60,4 @@ describe("BasicAnalyzer", () => {
     it.todo("should show when the down directional button is pressed");
 
     it.todo("should show when the left directional button is pressed");
-
-    it.todo("should show when the left stick button is pressed");
-
-    it.todo("should show when the right stick button is pressed");
 });
