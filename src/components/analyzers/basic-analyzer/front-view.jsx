@@ -98,6 +98,7 @@ export const FrontView = () => {
                     pressed={leftStickButton.pressed}
                     horizontal={leftJoystick.x}
                     vertical={leftJoystick.y}
+                    testId="left-stick"
                 />
                 <Joystick
                     x={42.405007}
@@ -105,16 +106,19 @@ export const FrontView = () => {
                     pressed={rightStickButton.pressed}
                     horizontal={rightJoystick.x}
                     vertical={rightJoystick.y}
+                    testId="right-stick"
                 />
                 <MenuButton
                     x={28.90851}
                     y={13.150282}
                     pressed={selectButton.pressed}
+                    testId="select-button"
                 />
                 <MenuButton
                     x={38.5203265}
                     y={13.150282}
                     pressed={startButton.pressed}
+                    testId="start-button"
                 />
                 <DirectionalPad
                     up={topDirectionButton.pressed}
@@ -163,7 +167,7 @@ const FaceButton = ({ pressed, x, y, testId }) => {
     );
 };
 
-const MenuButton = ({ pressed, x, y }) => {
+const MenuButton = ({ pressed, x, y, testId }) => {
     return (
         <circle
             className={classNames(drawingStyles.outlined, {
@@ -172,11 +176,12 @@ const MenuButton = ({ pressed, x, y }) => {
             cx={x}
             cy={y}
             r="1.2919108"
+            data-testid={testId}
         />
     );
 };
 
-const Joystick = ({ pressed, x, y, horizontal, vertical }) => {
+const Joystick = ({ pressed, x, y, horizontal, vertical, testId }) => {
     const movementScale = 1.5;
     return (
         <ellipse
@@ -187,6 +192,7 @@ const Joystick = ({ pressed, x, y, horizontal, vertical }) => {
             cy={y + vertical * movementScale}
             rx="3.4348307"
             ry="3.5444534"
+            data-testid={testId}
         />
     );
 };

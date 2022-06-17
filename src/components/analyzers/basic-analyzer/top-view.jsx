@@ -45,6 +45,7 @@ export const TopView = () => {
                 <ShoulderButton
                     side="left"
                     pressed={leftBumperButton.pressed}
+                    testId="left-shoulder"
                 />
                 <TriggerButton side="left" pressed={leftTrigger.pressed} />
                 <path
@@ -83,13 +84,14 @@ export const TopView = () => {
                 <ShoulderButton
                     side="right"
                     pressed={rightBumperButton.pressed}
+                    testId="right-shoulder"
                 />
             </g>
         </svg>
     );
 };
 
-const ShoulderButton = ({ side, pressed }) => {
+const ShoulderButton = ({ side, pressed, testId }) => {
     if (side === "left") {
         return (
             <g
@@ -97,6 +99,7 @@ const ShoulderButton = ({ side, pressed }) => {
                 className={classNames(drawingStyles.outlined, {
                     [drawingStyles.pressed]: pressed,
                 })}
+                data-testid={testId}
             >
                 <path d="m 125.62328,112.72522 c 0,0 4.30027,-0.20251 6.37316,0.0379 1.04091,0.12074 2.19203,0.12836 3.12967,0.68283 0.58138,0.3438 1.32774,1.19497 1.32774,1.19497 l 1.13807,-0.18968 -0.11381,-2.80722 -11.8738,-0.45523 z" />
                 <path d="M 125.63537,106.63329 123.814,96.76874 c 0,0 11.69156,-0.06462 17.24978,0.53605 2.66288,0.287774 6.30614,0.490708 8.89326,1.183926 2.65309,0.710894 4.41004,1.349478 6.67265,3.096034 1.36016,1.04993 2.54369,2.71201 3.27956,4.20871 0.49021,0.99706 1.1743,4.04757 1.1743,4.04757 l -13.16427,2.8062 z" />
@@ -110,6 +113,7 @@ const ShoulderButton = ({ side, pressed }) => {
                 className={classNames(drawingStyles.outlined, {
                     [drawingStyles.pressed]: pressed,
                 })}
+                data-testid={testId}
             >
                 <path d="m 196.54382,112.72522 c 0,0 -4.30027,-0.20251 -6.37316,0.0379 -1.04091,0.12074 -2.19203,0.12836 -3.12967,0.68283 -0.58138,0.3438 -1.32774,1.19497 -1.32774,1.19497 l -1.13807,-0.18968 0.11381,-2.80722 11.8738,-0.45523 z" />
                 <path d="m 196.53173,106.63329 1.82137,-9.86455 c 0,0 -11.69156,-0.06462 -17.24978,0.53605 -2.66288,0.287774 -6.30614,0.490708 -8.89326,1.183926 -2.65309,0.710894 -4.41004,1.349478 -6.67265,3.096034 -1.36016,1.04993 -2.54369,2.71201 -3.27956,4.20871 -0.49021,0.99706 -1.1743,4.04757 -1.1743,4.04757 l 13.16427,2.8062 z" />
@@ -155,7 +159,7 @@ const Joystick = ({ x, y }) => {
     return (
         <g
             transform={`translate(${x},${y})`}
-            className={ drawingStyles.outlined}
+            className={drawingStyles.outlined}
         >
             <path d="m 135.16657,86.511065 0.0572,4.973229 c 0,0 -2.15178,0.321423 -3.72764,1.870232 h 17.61051 c -2.03579,-1.731053 -4.32954,-1.856965 -4.32954,-1.856965 l -0.073,-4.988742 z" />
             <path d="m 133.6403,82.447572 12.69187,-0.113793 c 0,0 2.11221,0.509467 2.17446,2.361412 0.0623,1.851946 -2.0784,2.269873 -2.0784,2.269873 h -12.8105 c 0,0 -2.17898,0.05102 -2.17898,-2.154005 0,-2.205026 2.20155,-2.363487 2.20155,-2.363487 z" />

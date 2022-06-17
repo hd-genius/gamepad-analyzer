@@ -10,10 +10,7 @@ describe("useButton", () => {
         };
 
         useGamepad.mockReturnValue({
-            buttons: [
-                {},
-                targetButton
-            ],
+            buttons: [{}, targetButton],
         });
 
         expect(useButton(1)).toEqual(targetButton);

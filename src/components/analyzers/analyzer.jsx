@@ -16,4 +16,4 @@ export const Analyzer = () => {
         case Analyzers.TRIGGER:
             return <TriggerAnalyzer />;
     }
-}
+};

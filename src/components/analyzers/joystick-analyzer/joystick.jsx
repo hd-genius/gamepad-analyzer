@@ -48,7 +48,10 @@ export const Joystick = ({ name, horizontal, vertical }) => {
                 <circle
                     cx={midpoint + movementAreaRadius * horizontal}
                     cy={midpoint + movementAreaRadius * vertical}
-                    className={classNames(drawingStyles.outlined, drawingStyles.filled)}
+                    className={classNames(
+                        drawingStyles.outlined,
+                        drawingStyles.filled
+                    )}
                     r={positionRadius}
                 />
             </svg>

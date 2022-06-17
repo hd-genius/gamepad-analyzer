@@ -1,19 +1,20 @@
 import { useEffect } from "react";
 
-export const useEachFrame = (callback) => useEffect(() => {
-    let shouldContinue = true;
+export const useEachFrame = (callback) =>
+    useEffect(() => {
+        let shouldContinue = true;
 
-    function handleNextFrame() {
-        callback();
+        function handleNextFrame() {
+            callback();
 
-        if (shouldContinue) {
-            window.requestAnimationFrame(handleNextFrame);
+            if (shouldContinue) {
+                window.requestAnimationFrame(handleNextFrame);
+            }
         }
-    }
 
-    window.requestAnimationFrame(handleNextFrame);
+        window.requestAnimationFrame(handleNextFrame);
 
-    return () => {
-        shouldContinue = false;
-    };
-}, [callback]);
+        return () => {
+            shouldContinue = false;
+        };
+    }, [callback]);
