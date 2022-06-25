@@ -5,9 +5,23 @@
 			"type": "npm",
 			"script": "start",
 			"problemMatcher": [],
-			"label": "npm: start",
+			"label": "Start dev server",
 			"detail": "react-scripts start",
 			"isBackground": true
+		},
+		{
+		  "label": "Stop dev server",
+		  "command": "echo ${input:terminate}",
+		  "type": "shell",
+		  "problemMatcher": []
 		}
-	]
+	  ],
+	  "inputs": [
+		{
+		  "id": "terminate",
+		  "type": "command",
+		  "command": "workbench.action.tasks.terminate",
+		  "args": "terminateAll"
+		}
+	  ]
 }

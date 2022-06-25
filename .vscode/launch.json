@@ -10,7 +10,8 @@
             "name": "Debug in Chrome",
             "url": "https://localhost:3000",
             "webRoot": "${workspaceFolder}",
-            "preLaunchTask": "npm: start"
+            "preLaunchTask": "Start dev server",
+            "postDebugTask": "Stop dev server"
         }
     ]
 }
