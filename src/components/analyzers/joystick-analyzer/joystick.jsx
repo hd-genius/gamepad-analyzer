@@ -17,12 +17,12 @@ export const Joystick = ({ name, horizontal, vertical }) => {
             <table className={styles.joystickDetails}>
                 <caption>{name}</caption>
                 <tr>
-                    <th>Horizontal Axis</th>
-                    <td>{formatAsPercent(horizontal)}</td>
+                    <th className={styles.positionName}>Horizontal Axis</th>
+                    <td className={styles.positionValue}>{formatAsPercent(horizontal)}</td>
                 </tr>
                 <tr>
-                    <th>Vertical Axis</th>
-                    <td>{formatAsPercent(vertical)}</td>
+                    <th className={styles.positionName}>Vertical Axis</th>
+                    <td className={styles.positionValue}>{formatAsPercent(vertical)}</td>
                 </tr>
             </table>
             <svg

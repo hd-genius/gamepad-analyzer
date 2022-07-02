@@ -5,9 +5,22 @@
     flex: 1 1 50%;
 }
 
+.joystickDetails {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
 .joystickDisplay {
     width: calc(100% - 2em);
     margin: 1em;
+}
+
+.positionName {
+    text-align: left;
+}
+
+.positionValue {
+    text-align: right;
 }
 
 .analyzer {
