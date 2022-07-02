@@ -4,7 +4,7 @@ import drawingStyles from "../drawing.module.css";
 
 const formatAsPercent = value => {
     const percentage = value * 100;
-    return percentage.toFixed(2);
+    return percentage.toFixed(0);
 };
 
 export const Joystick = ({ name, horizontal, vertical }) => {
