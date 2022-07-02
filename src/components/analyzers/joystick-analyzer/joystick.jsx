@@ -2,6 +2,11 @@ import classNames from "classnames";
 import styles from "./joystick.module.css";
 import drawingStyles from "../drawing.module.css";
 
+const formatAsPercent = value => {
+    const percentage = value * 100;
+    return percentage.toFixed(2);
+};
+
 export const Joystick = ({ name, horizontal, vertical }) => {
     const positionRadius = 4;
     const movementAreaRadius = 50;
@@ -13,11 +18,11 @@ export const Joystick = ({ name, horizontal, vertical }) => {
                 <caption>{name}</caption>
                 <tr>
                     <th>Horizontal Axis</th>
-                    <td>{horizontal}</td>
+                    <td>{formatAsPercent(horizontal)}</td>
                 </tr>
                 <tr>
                     <th>Vertical Axis</th>
-                    <td>{vertical}</td>
+                    <td>{formatAsPercent(vertical)}</td>
                 </tr>
             </table>
             <svg
