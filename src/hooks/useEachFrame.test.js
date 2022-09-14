@@ -1,5 +1,5 @@
 import { useEachFrame } from "./useEachFrame";
-import { renderHook } from "@testing-library/react-hooks";
+import { renderHook } from "@testing-library/react";
 
 describe("useEachFrame", () => {
     beforeAll(() => {
