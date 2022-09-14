@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useContext, useEffect } from "react";
 import { Analyzers } from "../constants";
 import { GamepadContext } from "../contexts";
@@ -9,13 +10,13 @@ export const Toolbar = () => {
     const { id, selectGamepad, analyzerType, selectAnalyzer } =
         useContext(GamepadContext);
 
-    const selectDefaultGamepad = () => {
+    const selectDefaultGamepad = useCallback(() => {
         if (gamepads.length) {
             selectGamepad(gamepads[0].id);
         } else {
             selectGamepad(null);
         }
-    };
+    }, [gamepads, selectGamepad]);
 
     useEffect(selectDefaultGamepad);
 
@@ -24,7 +25,7 @@ export const Toolbar = () => {
         if (!isGamepadStillConnected) {
             selectDefaultGamepad();
         }
-    }, [gamepads, id]);
+    }, [gamepads, id, selectDefaultGamepad]);
 
     return (
         <div className={styles.toolbar}>

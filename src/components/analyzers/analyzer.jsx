@@ -15,5 +15,7 @@ export const Analyzer = () => {
             return <JoystickAnalyzer />;
         case Analyzers.TRIGGER:
             return <TriggerAnalyzer />;
+        default:
+            return null;
     }
 };
