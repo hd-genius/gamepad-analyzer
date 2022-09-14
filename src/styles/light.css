@@ -1,4 +1,6 @@
 :root {
     --background-color: white;
     --text-color: black;
+    --drawing-fill-color: white;
+    --drawing-outline-color: black;
 }

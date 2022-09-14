@@ -1,15 +1,3 @@
-:root {
-    --drawing-fill-color: white;
-    --drawing-outline-color: black;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --drawing-fill-color: black;
-        --drawing-outline-color: white;
-    }
-}
-
 .filled {
     fill: var(--drawing-outline-color);
 }
