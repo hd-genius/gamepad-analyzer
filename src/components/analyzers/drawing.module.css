@@ -22,6 +22,6 @@
 }
 
 .pressed {
-    fill: red;
+    fill: var(--pressed-fill-color);
     fill-opacity: 1;
 }
