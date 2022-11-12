@@ -18,12 +18,13 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
-    - name: Upload files
-      uses: sebastianpopp/ftp-action@releases/v2
+    - name: publish build
+      uses: SamKirkland/FTP-Deploy-Action@4.3.2
       with:
-        host: ${{ secrets.FTP_SERVER }}
-        user: ${{ secrets.FTP_USERNAME }}
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        localDir: "build"
-        remoteDir: "gamepad-analyser.hdgenius.me"
-        options: "--delete --asci"
+        protocol: ftps
+        port: 22 
+        local-dir: ./build
+        server-dir: ./gamepad-analyser.hdgenius.me
