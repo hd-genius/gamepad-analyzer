@@ -1,6 +1,6 @@
 {
-  "short_name": "Controller Tester",
-  "name": "Controller Tester",
+  "short_name": "Gamepad Analyzer",
+  "name": "Gamepad Analyzer",
   "icons": [
     {
       "src": "favicon.ico",
