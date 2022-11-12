@@ -26,5 +26,5 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
         port: 22 
-        local-dir: ./build
-        server-dir: ./gamepad-analyser.hdgenius.me
+        local-dir: ./build/
+        server-dir: ./gamepad-analyser.hdgenius.me/
