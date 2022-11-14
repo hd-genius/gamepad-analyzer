@@ -1,9 +1,9 @@
-import { GamepadContext } from "../contexts";
+import { GamepadContext } from "../../contexts";
 import { useState } from "react";
-import { useAllGamepads } from "../hooks";
-import { Toolbar } from "./toolbar";
-import { Analyzers } from "../constants";
-import { Analyzer } from "./analyzers";
+import { useAllGamepads } from "../../hooks";
+import { Toolbar } from "../toolbar/toolbar";
+import { Analyzers } from "../../constants";
+import { Analyzer } from "../analyzers";
 import styles from "./gamepad-display.module.css";
 
 export const GamepadDisplay = () => {

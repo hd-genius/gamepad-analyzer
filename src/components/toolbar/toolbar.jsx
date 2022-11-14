@@ -1,8 +1,8 @@
 import { useCallback } from "react";
 import { useContext, useEffect } from "react";
-import { Analyzers } from "../constants";
-import { GamepadContext } from "../contexts";
-import { useAllGamepads } from "../hooks";
+import { Analyzers } from "../../constants";
+import { GamepadContext } from "../../contexts";
+import { useAllGamepads } from "../../hooks";
 import styles from "./toolbar.module.css";
 
 export const Toolbar = () => {

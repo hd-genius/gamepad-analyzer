@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import { GamepadDisplay } from "./gamepad-display";
-import { useAllGamepads } from "../hooks";
+import { useAllGamepads } from "../../hooks";
 
-jest.mock("../hooks");
+jest.mock("../../hooks");
 
 describe("GamepadDisplay", () => {
     beforeEach(() => {
