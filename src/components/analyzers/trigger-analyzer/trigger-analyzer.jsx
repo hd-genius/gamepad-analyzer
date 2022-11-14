@@ -1,9 +1,9 @@
-import { LEFT_TRIGGER, RIGHT_TRIGGER } from "../../../constants";
+import { Buttons } from "../../../constants";
 import { useButton } from "../../../hooks";
 
 export const TriggerAnalyzer = () => {
-    const leftTrigger = useButton(LEFT_TRIGGER);
-    const rightTrigger = useButton(RIGHT_TRIGGER);
+    const leftTrigger = useButton(Buttons.LEFT_TRIGGER);
+    const rightTrigger = useButton(Buttons.RIGHT_TRIGGER);
     return (
         <div>
             <Trigger name="Left Trigger" value={leftTrigger.value} />
