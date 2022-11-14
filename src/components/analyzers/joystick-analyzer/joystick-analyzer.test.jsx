@@ -1,9 +1,9 @@
-import { LEFT, RIGHT } from "../../../constants";
+import { Joysticks } from "../../../constants";
 
 describe("JoystickAnalyzer", () => {
     describe.each([
-        ["left", LEFT],
-        ["right", RIGHT],
+        ["left", Joysticks.LEFT],
+        ["right", Joysticks.RIGHT],
     ])("%s joystick", () => {
         describe("values table", () => {
             it.todo("should show the horizontal value of the joystick");

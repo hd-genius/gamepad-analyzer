@@ -1,11 +1,11 @@
-import { LEFT, RIGHT } from "../../../constants";
+import { Joysticks } from "../../../constants";
 import { useJoystick } from "../../../hooks";
 import { Joystick } from "./joystick";
 import styles from "./joystick.module.css";
 
 export const JoystickAnalyzer = () => {
-    const leftJoystick = useJoystick(LEFT);
-    const rightJoystick = useJoystick(RIGHT);
+    const leftJoystick = useJoystick(Joysticks.LEFT);
+    const rightJoystick = useJoystick(Joysticks.RIGHT);
 
     return (
         <div className={styles.analyzer}>

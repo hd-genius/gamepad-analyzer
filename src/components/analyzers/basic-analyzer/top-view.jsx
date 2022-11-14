@@ -1,20 +1,15 @@
-import {
-    LEFT_SHOULDER,
-    RIGHT_SHOULDER,
-    LEFT_TRIGGER,
-    RIGHT_TRIGGER,
-} from "../../../constants";
+import { Buttons } from "../../../constants";
 import PropTypes from "prop-types";
 import { useButton } from "../../../hooks";
 import drawingStyles from "../drawing.module.css";
 import classNames from "classnames";
 
 export const TopView = () => {
-    const leftBumperButton = useButton(LEFT_SHOULDER);
-    const rightBumperButton = useButton(RIGHT_SHOULDER);
+    const leftBumperButton = useButton(Buttons.LEFT_SHOULDER);
+    const rightBumperButton = useButton(Buttons.RIGHT_SHOULDER);
 
-    const leftTrigger = useButton(LEFT_TRIGGER);
-    const rightTrigger = useButton(RIGHT_TRIGGER);
+    const leftTrigger = useButton(Buttons.LEFT_TRIGGER);
+    const rightTrigger = useButton(Buttons.RIGHT_TRIGGER);
 
     return (
         <svg viewBox="0 0 138.46764 58.538776">

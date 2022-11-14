@@ -1,43 +1,28 @@
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import {
-    BOTTOM_FACE,
-    RIGHT_FACE,
-    TOP_FACE,
-    LEFT_FACE,
-    UP_PAD,
-    RIGHT_PAD,
-    DOWN_PAD,
-    LEFT_PAD,
-    SELECT,
-    START,
-    LEFT_STICK,
-    RIGHT_STICK,
-    LEFT,
-    RIGHT,
-} from "../../../constants";
+import { Buttons, Joysticks } from "../../../constants";
 import drawingStyles from "../drawing.module.css";
 import { useButton, useJoystick } from "../../../hooks";
 
 export const FrontView = () => {
-    const bottomFaceButton = useButton(BOTTOM_FACE);
-    const rightFaceButton = useButton(RIGHT_FACE);
-    const leftFaceButton = useButton(LEFT_FACE);
-    const topFaceButton = useButton(TOP_FACE);
+    const bottomFaceButton = useButton(Buttons.BOTTOM_FACE);
+    const rightFaceButton = useButton(Buttons.RIGHT_FACE);
+    const leftFaceButton = useButton(Buttons.LEFT_FACE);
+    const topFaceButton = useButton(Buttons.TOP_FACE);
 
-    const selectButton = useButton(SELECT);
-    const startButton = useButton(START);
+    const selectButton = useButton(Buttons.SELECT);
+    const startButton = useButton(Buttons.START);
 
-    const leftStickButton = useButton(LEFT_STICK);
-    const rightStickButton = useButton(RIGHT_STICK);
+    const leftStickButton = useButton(Buttons.LEFT_STICK);
+    const rightStickButton = useButton(Buttons.RIGHT_STICK);
 
-    const topDirectionButton = useButton(UP_PAD);
-    const bottomDirectionButton = useButton(DOWN_PAD);
-    const leftDirectionButton = useButton(LEFT_PAD);
-    const rightDirectionButton = useButton(RIGHT_PAD);
+    const topDirectionButton = useButton(Buttons.UP_PAD);
+    const bottomDirectionButton = useButton(Buttons.DOWN_PAD);
+    const leftDirectionButton = useButton(Buttons.LEFT_PAD);
+    const rightDirectionButton = useButton(Buttons.RIGHT_PAD);
 
-    const leftJoystick = useJoystick(LEFT);
-    const rightJoystick = useJoystick(RIGHT);
+    const leftJoystick = useJoystick(Joysticks.LEFT);
+    const rightJoystick = useJoystick(Joysticks.RIGHT);
 
     return (
         <svg viewBox="0 0 66.03643 46.065399" version="1.1">
