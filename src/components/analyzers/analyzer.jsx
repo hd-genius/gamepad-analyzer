@@ -1,14 +1,23 @@
+import { lazy, Suspense } from "react";
 import { useContext } from "react";
 import { Analyzers } from "../../constants";
 import { GamepadContext } from "../../contexts";
-import { BasicAnalyzer } from "./basic-analyzer";
-import { JoystickAnalyzer } from "./joystick-analyzer";
-import { TriggerAnalyzer } from "./trigger-analyzer";
+import { LoadingIndicator } from "../loading-indicator/loading-indicator";
+
+const BasicAnalyzer = lazy(() => import("./basic-analyzer"))
+const JoystickAnalyzer = lazy(() => import("./joystick-analyzer"));
+const TriggerAnalyzer = lazy(() => import("./trigger-analyzer"));
 
 export const Analyzer = () => {
     const { analyzerType } = useContext(GamepadContext);
 
-    switch (analyzerType) {
+    return <Suspense fallback={<LoadingIndicator />}>
+        <AnalyzerResolver type={analyzerType} />
+    </Suspense>
+};
+
+const AnalyzerResolver = ({type}) => {
+    switch (type) {
         case Analyzers.BASIC:
             return <BasicAnalyzer />;
         case Analyzers.JOYSTICK:
@@ -18,4 +27,4 @@ export const Analyzer = () => {
         default:
             return null;
     }
-};
+}

@@ -1,1 +1,3 @@
-export { BasicAnalyzer } from "./basic-analyzer";
+import { BasicAnalyzer } from "./basic-analyzer";
+
+export default BasicAnalyzer;

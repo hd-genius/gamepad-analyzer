@@ -1,1 +1,3 @@
-export { JoystickAnalyzer } from "./joystick-analyzer";
+import { JoystickAnalyzer } from "./joystick-analyzer";
+
+export default JoystickAnalyzer;

@@ -1,1 +1,3 @@
-export { TriggerAnalyzer } from "./trigger-analyzer";
+import { TriggerAnalyzer } from "./trigger-analyzer";
+
+export default TriggerAnalyzer;
