@@ -38,4 +38,5 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         remoteDir: ${{ secrets.FTP_DIRECTORY }}
+        dryRun: false
         localDir: ./build
