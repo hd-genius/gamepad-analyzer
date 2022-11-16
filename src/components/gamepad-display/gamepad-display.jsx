@@ -5,6 +5,7 @@ import { Toolbar } from "../toolbar/toolbar";
 import { Analyzers } from "../../constants";
 import { Analyzer } from "../analyzers";
 import styles from "./gamepad-display.module.css";
+import { StatusIndicator } from "../status-indicator";
 
 export const GamepadDisplay = () => {
     const gamepads = useAllGamepads();
@@ -30,6 +31,6 @@ export const GamepadDisplay = () => {
             </GamepadContext.Provider>
         );
     } else {
-        return <span>No gamepads detected</span>;
+        return <StatusIndicator>No gamepads detected</StatusIndicator>;
     }
 };
