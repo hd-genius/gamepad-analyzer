@@ -32,12 +32,10 @@ jobs:
       run: npm run build
 
     - name: Publish build
-      uses: SamKirkland/FTP-Deploy-Action@4.3.2
+      uses: wangyucode/sftp-upload-action@v1.4.8
       with:
-        server: ${{ secrets.FTP_SERVER }}
+        host: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        protocol: ftps
-        port: 22 
-        local-dir: ./build/
-        server-dir: ./gamepad-analyser.hdgenius.me/
+        remoteDir: ${{ secrets.FTP_DIRECTORY }}
+        localDir: ./build
