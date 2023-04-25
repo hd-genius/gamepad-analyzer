@@ -35,7 +35,7 @@ export const Toolbar = () => {
             >
                 {gamepads.map((gamepad) => (
                     <option value={gamepad.id} key={gamepad.id}>
-                        Gamepad {gamepad.index + 1}
+                        {gamepad.id}
                     </option>
                 ))}
             </select>
