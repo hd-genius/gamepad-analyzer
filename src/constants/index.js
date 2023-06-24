@@ -1,3 +1,3 @@
-export * as Buttons from "./buttons";
-export * as Joysticks from "./joysticks";
-export * as Analyzers from "./analyzers";
+export { Buttons } from "./buttons";
+export { Joysticks } from "./joysticks";
+export { Analyzers } from "./analyzers";
