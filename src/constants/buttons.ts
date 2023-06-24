@@ -20,6 +20,5 @@ export enum Buttons {
     
     LEFT_TRIGGER = 6,
     RIGHT_TRIGGER = 7
-
 }
 
