@@ -2,7 +2,7 @@ import classNames from "classnames";
 import styles from "./joystick.module.css";
 import drawingStyles from "../drawing.module.css";
 
-const formatAsPercent = value => {
+const formatAsPercent = (value) => {
     const percentage = value * 100;
     return percentage.toFixed(0);
 };
@@ -18,11 +18,15 @@ export const Joystick = ({ name, horizontal, vertical }) => {
                 <caption>{name}</caption>
                 <tr>
                     <th className={styles.positionName}>Horizontal Axis</th>
-                    <td className={styles.positionValue}>{formatAsPercent(horizontal)}</td>
+                    <td className={styles.positionValue}>
+                        {formatAsPercent(horizontal)}
+                    </td>
                 </tr>
                 <tr>
                     <th className={styles.positionName}>Vertical Axis</th>
-                    <td className={styles.positionValue}>{formatAsPercent(vertical)}</td>
+                    <td className={styles.positionValue}>
+                        {formatAsPercent(vertical)}
+                    </td>
                 </tr>
             </table>
             <svg

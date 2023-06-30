@@ -7,4 +7,4 @@ describe("StatusIndicator", () => {
         render(<StatusIndicator>{content}</StatusIndicator>);
         expect(screen.getByText(content)).toBeVisible();
     });
-})
+});

@@ -1,8 +1,12 @@
-import PropTypes from "prop-types";
 import classNames from "classnames";
-import { Buttons, Joysticks } from "../../../constants";
-import drawingStyles from "../drawing.module.css";
-import { useButton, useJoystick } from "../../../hooks";
+import drawingStyles from "../../drawing.module.css";
+import { Buttons, Joysticks } from "../../../../constants";
+import { useButton, useJoystick } from "../../../../hooks";
+import { Joystick } from "./joystick";
+import { DirectionalPad } from "./directional-pad";
+import { FaceButton } from "./face-button";
+import { HomeButton } from "./home-button";
+import { MenuButton } from "./menu-button";
 
 export const FrontView = () => {
     const bottomFaceButton = useButton(Buttons.BOTTOM_FACE);
@@ -114,83 +118,4 @@ export const FrontView = () => {
             </g>
         </svg>
     );
-};
-
-const DirectionalPad = ({ up, down, left, right }) => {
-    return (
-        <path
-            className={drawingStyles.outlined}
-            d="m 26.561666,19.093082 v 3.10058 h 3.094325 c 0,0 0.32886,0.28236 0.32886,1.62464 0,1.34228 -0.32886,1.786 -0.32886,1.786 H 26.47972 v 3.10059 c 0,0 -0.492226,0.19379 -1.498617,0.19379 -1.00639,0 -1.550294,-0.19379 -1.550294,-0.19379 v -3.10059 h -3.307292 c 0,0 -0.354629,-0.25926 -0.356003,-1.71605 -0.0014,-1.45678 0.356003,-1.68519 0.356003,-1.68519 h 3.307292 v -3.10999 c 0,0 0.1609,-0.29232 1.595937,-0.29232 1.435036,0 1.53492,0.29233 1.53492,0.29233 z"
-        />
-    );
-};
-
-const HomeButton = ({ x, y }) => {
-    return (
-        <ellipse
-            className={drawingStyles.outlined}
-            cx={x}
-            cy={y}
-            rx="2.4029541"
-            ry="2.2737632"
-        />
-    );
-};
-
-const FaceButton = ({ pressed, x, y, testId }) => {
-    return (
-        <ellipse
-            className={classNames(drawingStyles.outlined, {
-                [drawingStyles.pressed]: pressed,
-            })}
-            data-testid={testId}
-            cx={x}
-            cy={y}
-            rx="2.1559045"
-            ry="2.1193638"
-        />
-    );
-};
-
-const MenuButton = ({ pressed, x, y, testId }) => {
-    return (
-        <circle
-            className={classNames(drawingStyles.outlined, {
-                [drawingStyles.pressed]: pressed,
-            })}
-            cx={x}
-            cy={y}
-            r="1.2919108"
-            data-testid={testId}
-        />
-    );
-};
-
-const Joystick = ({ pressed, x, y, horizontal, vertical, testId }) => {
-    const movementScale = 1.5;
-    return (
-        <ellipse
-            className={classNames(drawingStyles.outlined, {
-                [drawingStyles.pressed]: pressed,
-            })}
-            cx={x + horizontal * movementScale}
-            cy={y + vertical * movementScale}
-            rx="3.4348307"
-            ry="3.5444534"
-            data-testid={testId}
-        />
-    );
-};
-
-Joystick.propTypes = {
-    pressed: PropTypes.bool,
-    x: PropTypes.number.isRequired,
-    y: PropTypes.number.isRequired,
-    horizontal: PropTypes.number,
-    vertical: PropTypes.number,
-};
-
-Joystick.defaultProps = {
-    horizontal: 0,
-    vertical: 0,
 };
