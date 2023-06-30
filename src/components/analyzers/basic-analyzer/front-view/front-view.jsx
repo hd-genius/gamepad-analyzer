@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import drawingStyles from "../../drawing.module.css";
 import { Buttons, Joysticks } from "../../../../constants";
 import { useButton, useJoystick } from "../../../../hooks";
