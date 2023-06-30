@@ -15,7 +15,7 @@ export const MenuButton = ({ pressed, x, y, testId }: MenuButtonProps) => {
             })}
             cx={x}
             cy={y}
-            r="1.2919108"
+            r="1.29"
             data-testid={testId}
         />
     );

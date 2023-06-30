@@ -19,8 +19,8 @@ export const Joystick = ({ pressed, x, y, horizontal = 0, vertical = 0, testId }
             })}
             cx={x + horizontal * JOYSCTICK_MOVEMENT_SCALE}
             cy={y + vertical * JOYSCTICK_MOVEMENT_SCALE}
-            rx="3.4348307"
-            ry="3.5444534"
+            rx="3.43"
+            ry="3.54"
             data-testid={testId}
         />
     );

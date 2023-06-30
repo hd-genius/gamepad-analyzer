@@ -13,8 +13,8 @@ export const HomeButton = ({ x, y, pressed }: HomeButtonProps) => {
             })}
             cx={x}
             cy={y}
-            rx="2.4029541"
-            ry="2.2737632"
+            rx="2.4"
+            ry="2.27"
         />
     );
 };

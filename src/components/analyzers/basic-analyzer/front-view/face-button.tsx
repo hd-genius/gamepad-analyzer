@@ -16,8 +16,8 @@ export const FaceButton = ({ pressed, x, y, testId }: FaceButtonProps) => {
             data-testid={testId}
             cx={x}
             cy={y}
-            rx="2.1559045"
-            ry="2.1193638"
+            rx="2.16"
+            ry="2.12"
         />
     );
 };
