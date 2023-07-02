@@ -12,7 +12,9 @@
       "noImplicitReturns": true,
       "noImplicitThis": true,
       "noImplicitAny": true,
-      "strictNullChecks": true
+      "strictNullChecks": true,
+      "esModuleInterop": true,
+      "allowUmdGlobalAccess": true,
     },
     "exclude": [
       "node_modules",
