@@ -7,6 +7,7 @@ import { LoadingIndicator } from "../loading-indicator/loading-indicator";
 const BasicAnalyzer = lazy(() => import("./basic-analyzer"));
 const JoystickAnalyzer = lazy(() => import("./joystick-analyzer"));
 const TriggerAnalyzer = lazy(() => import("./trigger-analyzer"));
+const HapticsAnalyzer = lazy(() => import("./haptics-analyzer"));
 
 export const Analyzer = () => {
     const { analyzerType } = useContext(GamepadContext);
@@ -26,6 +27,8 @@ const AnalyzerResolver = ({ type }) => {
             return <JoystickAnalyzer />;
         case Analyzers.TRIGGER:
             return <TriggerAnalyzer />;
+        case Analyzers.HAPTIC:
+            return <HapticsAnalyzer />
         default:
             return null;
     }

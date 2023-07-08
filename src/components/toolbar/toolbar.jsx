@@ -47,6 +47,7 @@ export const Toolbar = () => {
                 <option value={Analyzers.BASIC}>Basic</option>
                 <option value={Analyzers.JOYSTICK}>Joystick</option>
                 <option value={Analyzers.TRIGGER}>Trigger</option>
+                <option value={Analyzers.HAPTIC}>Haptics</option>
             </select>
         </div>
     );
