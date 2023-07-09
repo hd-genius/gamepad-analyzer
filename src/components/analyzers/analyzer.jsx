@@ -28,7 +28,7 @@ const AnalyzerResolver = ({ type }) => {
         case Analyzers.TRIGGER:
             return <TriggerAnalyzer />;
         case Analyzers.HAPTIC:
-            return <HapticsAnalyzer />
+            return <HapticsAnalyzer />;
         default:
             return null;
     }

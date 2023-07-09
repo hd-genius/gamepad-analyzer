@@ -3,13 +3,16 @@ import { Handedness } from "./handedness";
 import drawingStyles from "../../drawing.module.css";
 import classNames from "classnames";
 
-
 interface ShoulderButtonProps extends ButtonProps {
     side: Handedness;
     testId: string;
 }
 
-export const ShoulderButton = ({ side, pressed, testId }: ShoulderButtonProps) => {
+export const ShoulderButton = ({
+    side,
+    pressed,
+    testId,
+}: ShoulderButtonProps) => {
     if (side === Handedness.LEFT) {
         return (
             <g

@@ -1,0 +1,19 @@
+.hapticsWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.strengthControls {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.strengthControlRow {
+    display: flex;
+    align-self: stretch;
+}
+
+.strengthSlider {
+    flex-grow: 1;
+}

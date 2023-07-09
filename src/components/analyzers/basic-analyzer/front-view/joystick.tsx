@@ -11,7 +11,14 @@ interface JoystickProps extends ButtonProps, PositionableProps {
 
 const JOYSCTICK_MOVEMENT_SCALE = 1.5;
 
-export const Joystick = ({ pressed, x, y, horizontal = 0, vertical = 0, testId }: JoystickProps) => {
+export const Joystick = ({
+    pressed,
+    x,
+    y,
+    horizontal = 0,
+    vertical = 0,
+    testId,
+}: JoystickProps) => {
     return (
         <ellipse
             className={classNames(drawingStyles.outlined, {

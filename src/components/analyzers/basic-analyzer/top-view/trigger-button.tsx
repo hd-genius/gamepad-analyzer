@@ -3,14 +3,16 @@ import classNames from "classnames";
 import { Handedness } from "./handedness";
 import { ButtonProps } from "../button-props";
 
-
 interface ShoulderButtonProps extends ButtonProps {
     side: Handedness;
     testId: string;
 }
 
-
-export const TriggerButton = ({ side, pressed, testId }: ShoulderButtonProps) => {
+export const TriggerButton = ({
+    side,
+    pressed,
+    testId,
+}: ShoulderButtonProps) => {
     if (side === Handedness.LEFT) {
         return (
             <g
