@@ -1,13 +1,11 @@
-import { GamepadContext } from "../../contexts";
+import { GamepadContext } from "./contexts";
 import { useState } from "react";
-import { useAllGamepads } from "../../hooks";
-import { Toolbar } from "../toolbar/toolbar";
-import { Analyzers } from "../../constants";
-import { Analyzer } from "../analyzers";
+import { useAllGamepads } from "./hooks";
+import { Toolbar, Analyzer, StatusIndicator } from "./components";
+import { Analyzers } from "./constants";
 import styles from "./gamepad-display.module.css";
-import { StatusIndicator } from "../status-indicator";
 
-export const GamepadDisplay = () => {
+export const App = () => {
     const gamepads = useAllGamepads();
     const [currentGamepadId, setCurrentGamepadId] = useState(null);
     const [analyzerType, setAnalyzerType] = useState(Analyzers.BASIC);
