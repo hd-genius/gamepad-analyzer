@@ -4,6 +4,7 @@ import { useAllGamepads } from "./hooks";
 import { Toolbar, Analyzer, StatusIndicator } from "./components";
 import { Analyzers } from "./constants";
 import styles from "./gamepad-display.module.css";
+import "./app.css";
 
 export const App = () => {
     const gamepads = useAllGamepads();
