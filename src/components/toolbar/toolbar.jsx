@@ -1,54 +1,37 @@
 import { useCallback } from "react";
 import { useContext, useEffect } from "react";
-import { Analyzers } from "../../constants";
 import { GamepadContext } from "../../contexts";
 import { useAllGamepads } from "../../hooks";
 import styles from "./toolbar.module.css";
+import { GamepadDropdown } from "./gamepad-dropdown";
 
 export const Toolbar = () => {
     const gamepads = useAllGamepads();
-    const { id, selectGamepad, analyzerType, selectAnalyzer } =
+    const { id, selectGamepad } =
         useContext(GamepadContext);
+    
+    const gamepadIds = gamepads.map((x) => x.id);
 
     const selectDefaultGamepad = useCallback(() => {
-        if (gamepads.length) {
-            selectGamepad(gamepads[0].id);
+        if (gamepadIds.length) {
+            selectGamepad(gamepadIds[0]);
         } else {
             selectGamepad(null);
         }
-    }, [gamepads, selectGamepad]);
+    }, [gamepadIds, selectGamepad]);
 
-    useEffect(selectDefaultGamepad);
+    useEffect(selectDefaultGamepad, []);
 
     useEffect(() => {
-        const isGamepadStillConnected = gamepads.map((x) => x.id).includes(id);
+        const isGamepadStillConnected = gamepadIds.includes(id);
         if (!isGamepadStillConnected) {
             selectDefaultGamepad();
         }
     }, [gamepads, id, selectDefaultGamepad]);
 
     return (
-        <div className={styles.toolbar}>
-            <select
-                className={styles.dropdown}
-                onChange={(e) => selectGamepad(e.target.value)}
-            >
-                {gamepads.map((gamepad) => (
-                    <option value={gamepad.id} key={gamepad.id}>
-                        {gamepad.id}
-                    </option>
-                ))}
-            </select>
-            <select
-                className={styles.dropdown}
-                value={analyzerType}
-                onChange={(e) => selectAnalyzer(parseInt(e.target.value))}
-            >
-                <option value={Analyzers.BASIC}>Basic</option>
-                <option value={Analyzers.JOYSTICK}>Joystick</option>
-                <option value={Analyzers.TRIGGER}>Trigger</option>
-                <option value={Analyzers.HAPTIC}>Haptics</option>
-            </select>
-        </div>
+        <ul className={styles.toolbar}>
+            {gamepadIds.map(x => <GamepadDropdown id={x} />)}
+        </ul>
     );
 };

@@ -1,5 +1,6 @@
 :root {
     --background-color: black;
+    --toolbar-background: gray;
     --text-color: white;
     --drawing-fill-color: black;
     --drawing-outline-color: white;

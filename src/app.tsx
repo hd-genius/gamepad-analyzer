@@ -3,17 +3,15 @@ import { useState } from "react";
 import { useAllGamepads } from "./hooks";
 import { Toolbar, Analyzer, StatusIndicator } from "./components";
 import { Analyzers } from "./constants";
-import styles from "./gamepad-display.module.css";
+import styles from "./app.module.scss";
 import "./app.css";
 
 export const App = () => {
-    const gamepads = useAllGamepads();
-    const [currentGamepadId, setCurrentGamepadId] = useState(null);
+    const [currentGamepadId, setCurrentGamepadId] = useState<string | null>(null);
     const [analyzerType, setAnalyzerType] = useState(Analyzers.BASIC);
 
-    const hasGamepadConnected = gamepads.length > 0;
+    const isGamepadSelected = currentGamepadId !== null;
 
-    if (hasGamepadConnected) {
         return (
             <GamepadContext.Provider
                 value={{
@@ -23,13 +21,13 @@ export const App = () => {
                     analyzerType,
                 }}
             >
-                <div className={styles.gamepadDisplay}>
+                <div className={styles.appWrapper}>
                     <Toolbar />
-                    {currentGamepadId !== null && <Analyzer />}
+                    <div className={styles.gamepadDisplay}>
+                        {isGamepadSelected && <Analyzer />}
+                        {!isGamepadSelected && <StatusIndicator>No gamepad selected</StatusIndicator>}
+                    </div>
                 </div>
             </GamepadContext.Provider>
         );
-    } else {
-        return <StatusIndicator>No gamepads detected</StatusIndicator>;
-    }
 };

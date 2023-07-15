@@ -1,6 +1,13 @@
+.appWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
 .gamepadDisplay {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: stretch;
     width: 100vw;
     max-width: 140mm;
