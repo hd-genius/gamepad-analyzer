@@ -3,6 +3,7 @@ import { Analyzers } from "../../constants";
 import { GamepadContext } from "../../contexts";
 import styles from "./toolbar.module.scss";
 import classNames from "classnames";
+import { ControllerType } from "../../domain/controller-type";
 
 interface GamepadDropdownProps {
     id: string;
@@ -11,7 +12,7 @@ interface GamepadDropdownProps {
 export const GamepadDropdown = ({ id }: GamepadDropdownProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const toggleExpansion = () => {setIsOpen(x => !x)};
-    const controllerType = "Unknown";
+    const controllerType = ControllerType.displayNameFor(ControllerType.parseFrom(id));
     return <li className={styles.dropdownSection}>
         <button className={styles.dropdownButton} onClick={toggleExpansion}>
             <div className={styles.controllerData}>
