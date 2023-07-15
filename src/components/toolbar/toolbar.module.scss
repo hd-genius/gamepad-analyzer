@@ -1,0 +1,73 @@
+.toolbar {
+    background-color: var(--toolbar-background);
+    height: 100vh;
+    width: 30ch;
+    margin: 0 !important;
+    list-style: none;
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+    margin-bottom: 2em;
+    padding-left: 0;
+}
+
+.dropdownSection {
+    border-bottom: 1px solid black;
+    background-color: var(--toolbar-section-background);
+}
+
+// button style resets
+.dropdownButton, .analyzerOptionButton {
+    color: inherit;
+    border: none;
+}
+
+.dropdownButton {
+    --dropdown-indicator-width: 2em;
+    --dropdown-indicator-spacing: 2em;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1em;
+    background: none;
+}
+
+.controllerData {
+    width: calc(100% - var(--dropdown-indicator-width) - var(--dropdown-indicator-spacing));
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-right: var(--dropdown-indicator-spacing);
+}
+
+.controllerId {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 0.5em;
+}
+
+.dropdownIndicator {
+    width: var(--dropdown-indicator-width);
+}
+
+.analyzerOptions:not(.open) {
+    display: none;
+}
+
+.analyzerOptions {
+    list-style: none;
+    padding-left: 0;
+}
+
+.analyzerOptionButton {
+    width: 100%;
+    padding: 0.75em;
+    background-color: var(--toolbar-background);
+    border-top: 1px solid black;
+}
+
+.activeAnalyzer {
+    color: lightseagreen;
+}

@@ -1,8 +1,10 @@
 :root {
     --background-color: white;
-    --toolbar-background: gray;
     --text-color: black;
     --drawing-fill-color: white;
     --drawing-outline-color: black;
     --pressed-fill-color: blue;
+
+    --toolbar-background: gray;
+    --toolbar-section-background: #444;
 }

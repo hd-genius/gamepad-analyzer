@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Analyzers } from "../../constants";
 import { GamepadContext } from "../../contexts";
-import styles from "./toolbar.module.css";
+import styles from "./toolbar.module.scss";
 import classNames from "classnames";
 
 interface GamepadDropdownProps {
@@ -11,11 +11,15 @@ interface GamepadDropdownProps {
 export const GamepadDropdown = ({ id }: GamepadDropdownProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const toggleExpansion = () => {setIsOpen(x => !x)};
-    return <li>
-        <div onClick={toggleExpansion}>
-            <span>id: {id}</span>
-            <span>type: unknown</span>
-        </div>
+    const controllerType = "Unknown";
+    return <li className={styles.dropdownSection}>
+        <button className={styles.dropdownButton} onClick={toggleExpansion}>
+            <div className={styles.controllerData}>
+                <span className={styles.controllerId}>{id}</span>
+                <span>Type: {controllerType}</span>
+            </div>
+            <img className={styles.dropdownIndicator} alt="dropdown indicator" />
+        </button>
         <ul className={classNames(styles.analyzerOptions, {
             [styles.open]: isOpen
         })}>
@@ -35,9 +39,12 @@ interface AnalyzerButtonProps {
 }
 
 const AnalyzerButton = ({ id, type, children }: AnalyzerButtonProps) => {
-    const { selectAnalyzer, selectGamepad } = useContext(GamepadContext);
+    const { selectAnalyzer, selectGamepad, id: selectedGamepad, analyzerType } = useContext(GamepadContext);
+    const isSelected = id === selectedGamepad && type === analyzerType;
     return <li className={styles.analyzerOption}>
-        <button className={styles.analyzerOptionButton} onClick={() => {
+        <button className={classNames(styles.analyzerOptionButton, {
+            [styles.activeAnalyzer]: isSelected
+        })} onClick={() => {
             selectAnalyzer(type);
             selectGamepad(id);
         }}>{children}</button>

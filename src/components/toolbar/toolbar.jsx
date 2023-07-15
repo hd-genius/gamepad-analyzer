@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { useContext, useEffect } from "react";
 import { GamepadContext } from "../../contexts";
 import { useAllGamepads } from "../../hooks";
-import styles from "./toolbar.module.css";
+import styles from "./toolbar.module.scss";
 import { GamepadDropdown } from "./gamepad-dropdown";
 
 export const Toolbar = () => {
