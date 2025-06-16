@@ -12,7 +12,7 @@ describe("GamepadDisplay", () => {
     it("should show a message when no gamepads are connected", () => {
         useAllGamepads.mockReturnValue([]);
         render(<App />);
-        expect(screen.getByText("No gamepads detected")).toBeVisible();
+        expect(screen.getByText("No gamepad selected")).toBeVisible();
     });
 
     it.todo(
