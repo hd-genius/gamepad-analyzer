@@ -1,6 +1,5 @@
 import { GamepadContext } from "./contexts";
 import { useState } from "react";
-import { useAllGamepads } from "./hooks";
 import { Toolbar, Analyzer, StatusIndicator } from "./components";
 import { Analyzers } from "./constants";
 import styles from "./app.module.scss";
