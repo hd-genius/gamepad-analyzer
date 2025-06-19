@@ -20,6 +20,7 @@ export const Toolbar = () => {
         }
     }, [gamepadIds, selectGamepad]);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(selectDefaultGamepad, []);
 
     useEffect(() => {
@@ -27,7 +28,7 @@ export const Toolbar = () => {
         if (!isGamepadStillConnected) {
             selectDefaultGamepad();
         }
-    }, [gamepads, id, selectDefaultGamepad]);
+    }, [gamepadIds, id, selectDefaultGamepad]);
 
     return (
         <ul className={styles.toolbar}>
