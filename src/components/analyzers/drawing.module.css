@@ -8,7 +8,7 @@
 
 .outlined {
     stroke: var(--drawing-outline-color);
-    stroke-width: 0.264583px;
+    stroke-width: calc(0.264583px * var(--drawing-scale-factor, 1));
     stroke-linecap: butt;
     stroke-linejoin: miter;
     stroke-dasharray: none;
