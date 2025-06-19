@@ -11,6 +11,8 @@ export enum Buttons {
 
     SELECT = 8,
     START = 9,
+    
+    HOME = 16,
 
     LEFT_STICK = 10,
     RIGHT_STICK = 11,
