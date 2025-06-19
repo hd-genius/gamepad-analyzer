@@ -2,7 +2,7 @@
     fill: var(--drawing-outline-color);
 }
 
-.outlined:not(.filled, .pressed) {
+.outlined:not(.filled, .pressed, .empty) {
     fill: var(--drawing-fill-color);
 }
 
