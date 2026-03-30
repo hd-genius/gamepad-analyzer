@@ -1,7 +1,8 @@
 .appWrapper {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
 }
 
 .gamepadDisplay {
