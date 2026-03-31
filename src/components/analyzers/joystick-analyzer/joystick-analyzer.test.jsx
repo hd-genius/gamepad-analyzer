@@ -1,4 +1,4 @@
-import { Joysticks } from "../../../constants";
+import { Joysticks } from "../../../domain";
 
 describe("JoystickAnalyzer", () => {
     describe.each([

@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react";
 import { GamepadContext } from "../../contexts";
 import { useAllGamepads } from "../../hooks";
 import styles from "./toolbar.module.scss";
-import { Analyzers } from "../../constants";
+import { Analyzers } from "../../domain";
 
 export const Toolbar = () => {
     const gamepads = useAllGamepads();

@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { BasicAnalyzer } from "./basic-analyzer";
 import { useButton, useJoystick } from "../../../hooks";
-import { Buttons } from "../../../constants";
+import { Buttons } from "../../../domain";
 import styles from "../drawing.module.css";
 
 jest.mock("../../../hooks");

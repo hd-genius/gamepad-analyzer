@@ -1,4 +1,4 @@
-import { Buttons } from "../../../../constants";
+import { Buttons } from "../../../../domain";
 import { ShoulderButton } from "./shoulder-button";
 import { TriggerButton } from "./trigger-button";
 import { useButton } from "../../../../hooks";

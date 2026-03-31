@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { Analyzers } from "../constants";
+import { Analyzers } from "../domain";
 
 export interface GamepadContextValue {
     id: string | null;

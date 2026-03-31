@@ -1,4 +1,4 @@
-import { Joysticks } from "../../../constants";
+import { Joysticks } from "../../../domain";
 import { useJoystick } from "../../../hooks";
 import { Joystick } from "./joystick";
 import styles from "./joystick.module.css";
