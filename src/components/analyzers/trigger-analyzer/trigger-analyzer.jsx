@@ -1,4 +1,4 @@
-import { Buttons } from "../../../constants";
+import { Buttons } from "../../../domain";
 import { useButton } from "../../../hooks";
 import { Trigger } from "./trigger";
 import styles from "./trigger.module.css";

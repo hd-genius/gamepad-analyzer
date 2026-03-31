@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react";
 import { useContext } from "react";
-import { Analyzers } from "../../constants";
+import { Analyzers } from "../../domain";
 import { GamepadContext } from "../../contexts";
 import { LoadingIndicator } from "../loading-indicator/loading-indicator";
 

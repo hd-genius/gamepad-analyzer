@@ -1,7 +1,10 @@
 .appWrapper {
     width: 100%;
+    max-width: 60ch;
+    min-height: 100vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
 }
 
 .gamepadDisplay {

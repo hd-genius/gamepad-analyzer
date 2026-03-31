@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 
-export const useAllGamepads = () => {
-    const [gamepads, setGamepads] = useState([]);
+export function useAllGamepads(): Gamepad[] {
+    const [gamepads, setGamepads] = useState<Gamepad[]>([]);
 
     useEffect(() => {
         const updateControllers = () => {
             const connectedGamepads = navigator.getGamepads().filter((x) => x);
-            setGamepads(connectedGamepads);
+            setGamepads(connectedGamepads as Gamepad[]);
         };
 
         updateControllers();

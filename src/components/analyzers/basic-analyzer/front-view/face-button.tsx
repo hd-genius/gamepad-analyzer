@@ -1,6 +1,6 @@
 import { ButtonProps } from "../button-props";
 import classNames from "classnames";
-import drawingStyles from "../../drawing.module.css";
+import drawingStyles from "../../drawing/drawing.module.css";
 import { PositionableProps } from "../../drawing";
 
 interface FaceButtonProps extends ButtonProps, PositionableProps {
