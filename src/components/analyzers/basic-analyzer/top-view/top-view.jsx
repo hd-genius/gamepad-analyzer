@@ -2,7 +2,7 @@ import { Buttons } from "../../../../domain";
 import { ShoulderButton } from "./shoulder-button";
 import { TriggerButton } from "./trigger-button";
 import { useButton } from "../../../../hooks";
-import drawingStyles from "../../drawing.module.css";
+import drawingStyles from "../../drawing/drawing.module.css";
 import { Handedness } from "./handedness";
 
 export const TopView = () => {

@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import styles from "./joystick.module.css";
-import drawingStyles from "../drawing.module.css";
+import drawingStyles from "../drawing/drawing.module.css";
 
 const formatAsPercent = (value) => {
     const percentage = value * 100;

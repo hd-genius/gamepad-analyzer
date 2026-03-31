@@ -1,7 +1,7 @@
 import { PositionableProps } from "../../drawing";
+import drawingStyles from "../../drawing/drawing.module.css";
 import { ButtonProps } from "../button-props";
 import classNames from "classnames";
-import drawingStyles from "../../drawing.module.css";
 
 interface JoystickProps extends ButtonProps, PositionableProps {
     horizontal: number;

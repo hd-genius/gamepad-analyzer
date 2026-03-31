@@ -1,4 +1,4 @@
-import drawingStyles from "../drawing.module.css";
+import drawingStyles from "../drawing/drawing.module.css";
 import styles from "./trigger.module.css";
 
 /**

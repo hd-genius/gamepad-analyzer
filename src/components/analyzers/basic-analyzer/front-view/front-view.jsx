@@ -1,4 +1,4 @@
-import drawingStyles from "../../drawing.module.css";
+import drawingStyles from "../../drawing/drawing.module.css";
 import { Buttons, Joysticks } from "../../../../domain";
 import { useButton, useJoystick } from "../../../../hooks";
 import { Joystick } from "./joystick";
