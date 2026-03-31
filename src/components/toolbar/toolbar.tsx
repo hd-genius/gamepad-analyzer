@@ -7,7 +7,7 @@ import { Analyzers } from "../../domain";
 
 export const Toolbar = () => {
     const gamepads = useAllGamepads();
-    const { id, selectGamepad, selectAnalyzer, analyzerType } =
+    const { id, selectGamepad, selectAnalyzer } =
         useContext(GamepadContext);
     
     const gamepadIds = gamepads.map((x) => x.id);
@@ -29,18 +29,24 @@ export const Toolbar = () => {
             selectDefaultGamepad();
         }
     }, [gamepadIds, id, selectDefaultGamepad]);
-    // const controllerType = ControllerType.displayNameFor(ControllerType.parseFrom(id));
+
     return (
         <div className={styles.toolbar}>
-            <select className={styles.gamepadSelect} onChange={(e) => selectGamepad(e.target.value)} >
-                {gamepadIds.map(x => <option key={x} value={x} selected={id === x}>{x}</option>)}
-            </select>
-            <select className={styles.analyzerSelect} onChange={(e) => selectAnalyzer(Number(e.target.value))} >
-                <AnalyzerOption type={Analyzers.BASIC} />
-                <AnalyzerOption type={Analyzers.JOYSTICK} />
-                <AnalyzerOption type={Analyzers.TRIGGER} />
-                <AnalyzerOption type={Analyzers.HAPTIC} />
-            </select>
+            <div className={styles.selectionGroup}>
+                <label htmlFor="controller-select" className={styles.label}>Controller</label>
+                <select id="controller-select" className={styles.selection} onChange={(e) => selectGamepad(e.target.value)} >
+                    {gamepadIds.map(x => <option key={x} value={x} selected={id === x}>{x}</option>)}
+                </select>
+            </div>
+            <div className={styles.selectionGroup}>
+                <label htmlFor="analyzer-select" className={styles.label}>Analyzer</label>
+                <select id="analyzer-select" className={styles.selection} onChange={(e) => selectAnalyzer(Number(e.target.value))} >
+                    <AnalyzerOption type={Analyzers.BASIC} />
+                    <AnalyzerOption type={Analyzers.JOYSTICK} />
+                    <AnalyzerOption type={Analyzers.TRIGGER} />
+                    <AnalyzerOption type={Analyzers.HAPTIC} />
+                </select>
+            </div>
         </div>
     );
 };

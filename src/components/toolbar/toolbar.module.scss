@@ -1,10 +1,22 @@
 .toolbar {
-    margin: 0 !important;
+    width: 100%;
     list-style: none;
     display: flex;
+    flex-direction: column;
     overflow-y: auto;
-    gap: 1em;
+    gap: 0.75em;
+    margin: 1em 0em;
+}
+
+.selectionGroup {
+    display: flex;
     flex-direction: row;
-    margin-bottom: 2em;
-    padding-left: 0;
+}
+
+.label {
+    width: 10ch;
+}
+
+.selection {
+    flex-grow: 1;
 }
