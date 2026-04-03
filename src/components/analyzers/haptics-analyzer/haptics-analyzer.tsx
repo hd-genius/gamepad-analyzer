@@ -1,9 +1,10 @@
 import { ChangeEvent, useState } from "react";
-import { useVibrationControls } from "../../../hooks";
+import { useVibrationActuator } from "../../../hooks";
 import styles from "./haptics-analyzer.module.scss";
+import { VibrationActuatorType } from "../../../domain";
 
 export const HapticsAnalyzer = () => {
-    const vibrationControls = useVibrationControls();
+    const vibrator = useVibrationActuator(VibrationActuatorType.RIGHT_HANDLE);
     const [strength, setStrength] = useState(0.5);
     const strengthInputProps = {
         min: 0,
@@ -15,6 +16,9 @@ export const HapticsAnalyzer = () => {
             setStrength(value);
         },
     };
+    if (!vibrator) {
+        return <></>;
+    }
     return (
         <div className={styles.hapticsWrapper}>
             <span className={styles.strengthControls}>
@@ -29,8 +33,8 @@ export const HapticsAnalyzer = () => {
                 </span>
             </span>
             <button
-                onMouseDown={() => vibrationControls.start()}
-                onMouseUp={() => vibrationControls.stop()}
+                onMouseDown={() => vibrator.start()}
+                onMouseUp={() => vibrator.stop()}
             >
                 Vibrate
             </button>

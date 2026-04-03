@@ -1,0 +1,1 @@
+export { useVibrationActuator } from "./useVibrationActuator";
