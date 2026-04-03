@@ -1,7 +1,8 @@
-import { useJoystick } from "./useJoystick";
-import { useGamepad } from "./useGamepad";
+import { renderHook } from "@testing-library/react";
+import { useJoystick } from ".";
+import { useGamepad } from "../useGamepad";
 
-jest.mock("./useGamepad");
+jest.mock("../useGamepad");
 
 describe("useJoystick", () => {
     it.each([
@@ -10,10 +11,11 @@ describe("useJoystick", () => {
     ])(
         "should return the correct value for the %s joystick's horizontal axis",
         (name, joystickId, expectedValue, ...axes) => {
-            useGamepad.mockReturnValue({
+            (useGamepad as jest.Mock).mockReturnValue({
                 axes,
             });
-            expect(useJoystick(joystickId).x).toEqual(expectedValue);
+            const { result } = renderHook(() => useJoystick(joystickId));
+            expect(result.current.x).toEqual(expectedValue);
         }
     );
 
@@ -23,10 +25,11 @@ describe("useJoystick", () => {
     ])(
         "should return the correct value for the %s joystick's vertical axis",
         (name, joystickId, expectedValue, ...axes) => {
-            useGamepad.mockReturnValue({
+            (useGamepad as jest.Mock).mockReturnValue({
                 axes,
             });
-            expect(useJoystick(joystickId).y).toEqual(expectedValue);
+            const { result } = renderHook(() => useJoystick(joystickId));
+            expect(result.current.y).toEqual(expectedValue);
         }
     );
 });

@@ -1,4 +1,4 @@
-import { useGamepad } from "../useGamepad";
+import { useGamepad } from "../useGamepad/useGamepad";
 import { VibrationControls, possibleGetters } from "./controls";
 
 export const useVibrationControls: () => VibrationControls = () => {

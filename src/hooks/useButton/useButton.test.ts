@@ -1,7 +1,7 @@
-import { useGamepad } from "./useGamepad";
-import { useButton } from "./useButton";
+import { useGamepad } from "../useGamepad";
+import { useButton } from ".";
 
-jest.mock("./useGamepad");
+jest.mock("../useGamepad");
 
 describe("useButton", () => {
     it("should return the correct button from the current gamepad", () => {
@@ -9,7 +9,7 @@ describe("useButton", () => {
             pressed: true,
         };
 
-        useGamepad.mockReturnValue({
+        (useGamepad as jest.Mock).mockReturnValue({
             buttons: [{}, targetButton],
         });
 

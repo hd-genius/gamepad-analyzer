@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { act } from "react-dom/test-utils";
+import { act } from "react";
 import { LoadingIndicator } from "../loading-indicator/loading-indicator";
 
 const TICK_DELAY = 750;

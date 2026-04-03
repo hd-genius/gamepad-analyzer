@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import { GamepadContext } from "../contexts";
-import { useEachFrame } from "./useEachFrame";
+import { GamepadContext } from "../../contexts";
+import { useEachFrame } from "../useEachFrame";
 
 export const useGamepad = () => {
     const { id } = useContext(GamepadContext);
@@ -9,7 +9,7 @@ export const useGamepad = () => {
         navigator
             .getGamepads()
             .filter((x) => x)
-            .filter((x) => x.id === id)[0];
+            .filter((x) => (x as Gamepad).id === id)[0];
 
     const [lastUpdate, setLastUpdate] = useState(0);
     const [currentGamepad, setCurrentGamePad] = useState(findGamepad());
@@ -17,11 +17,11 @@ export const useGamepad = () => {
     useEachFrame(() => {
         const gamepad = findGamepad();
 
-        if (gamepad.timestamp > lastUpdate) {
+        if (gamepad && gamepad.timestamp > lastUpdate) {
             setCurrentGamePad(gamepad);
             setLastUpdate(gamepad.timestamp);
         }
     });
 
-    return currentGamepad;
+    return currentGamepad as Gamepad;
 };

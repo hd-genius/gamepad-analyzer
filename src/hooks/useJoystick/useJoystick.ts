@@ -1,6 +1,6 @@
-import { useGamepad } from "./useGamepad";
+import { useGamepad } from "../useGamepad";
 
-export const useJoystick = (index) => {
+export const useJoystick = (index: number) => {
     const gamepad = useGamepad();
     const firstAxis = index * 2;
     return {
