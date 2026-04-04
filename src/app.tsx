@@ -1,40 +1,13 @@
-import { GamepadContext } from "./contexts";
-import { useState } from "react";
-import { Toolbar, Analyzer, StatusIndicator } from "./components";
-import { Analyzers } from "./domain";
-import styles from "./app.module.scss";
+import { StatusIndicator } from "./components";
 import "./app.css";
-import { useAllGamepads } from "./hooks";
+import { Main } from "./components/main/main";
 
 export const App = () => {
-    const gamepads = useAllGamepads();
-    const [currentGamepadId, setCurrentGamepadId] = useState<string | null>(null);
-    const [analyzerType, setAnalyzerType] = useState(Analyzers.BASIC);
+    const supportsGamepads = "getGamepads" in navigator;
 
-    const hasGamepads = gamepads.length > 0;
-
-    if (!hasGamepads) {
-        return <StatusIndicator>No gamepads detected</StatusIndicator>
+    if (!supportsGamepads) {
+        return <StatusIndicator>This browser does not support the Gamepad API. Please use a browser that does.</StatusIndicator>
+    } else {
+        return <Main/>;
     }
-
-    const isGamepadSelected = currentGamepadId !== null;
-
-    return (
-        <GamepadContext.Provider
-            value={{
-                id: currentGamepadId,
-                selectGamepad: (id) => setCurrentGamepadId(id),
-                selectAnalyzer: (type) => setAnalyzerType(type),
-                analyzerType,
-            }}
-        >
-            <div className={styles.appWrapper}>
-                <Toolbar />
-                <div className={styles.gamepadDisplay}>
-                    {isGamepadSelected && <Analyzer />}
-                    {!isGamepadSelected && <StatusIndicator>No gamepad selected</StatusIndicator>}
-                </div>
-            </div>
-        </GamepadContext.Provider>
-    );
 };
