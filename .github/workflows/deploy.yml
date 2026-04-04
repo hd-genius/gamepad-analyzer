@@ -1,8 +1,10 @@
-name: Build
+name: Deploy
 
 on:
-  push:
-    branches: ["main", "deploy"]
+  workflow_run:
+    workflows: [Build]
+    types: [completed]
+    branches: [deploy]
   workflow_dispatch:
 
 permissions:
@@ -17,8 +19,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  quality-check:
-    name: Quality Check
+  build:
+    name: Build
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -33,8 +36,24 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Run unit tests
-      run: npm test
-
     - name: Build
       run: npm run build
+      
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: build/
+
+  deploy:
+    name: Deploy
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
