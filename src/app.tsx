@@ -1,5 +1,4 @@
 import { StatusIndicator } from "./components";
-import "./app.css";
 import { Main } from "./components/main/main";
 
 export const App = () => {
