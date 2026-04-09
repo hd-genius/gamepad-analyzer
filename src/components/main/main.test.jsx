@@ -16,7 +16,7 @@ describe("GamepadDisplay", () => {
     });
 
     it.todo(
-        "should render the basic analyzer by default when the a joystick is connected"
+        "should render the basic analyzer by default when the a gamepad is connected"
     );
 
     it.todo(
