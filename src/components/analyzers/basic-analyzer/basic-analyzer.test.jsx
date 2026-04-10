@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { BasicAnalyzer } from "./basic-analyzer";
 import { useButton, useJoystick } from "../../../hooks";
 import { Buttons } from "../../../domain";
-import styles from "../drawing.module.css";
+import styles from "../drawing.module.scss";
 
 jest.mock("../../../hooks");
 

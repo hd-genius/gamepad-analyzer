@@ -1,4 +1,4 @@
-import drawingStyles from "../../drawing/drawing.module.css";
+import drawingStyles from "../../drawing/drawing.module.scss";
 import classNames from "classnames";
 import { Handedness } from "./handedness";
 import { ButtonProps } from "../button-props";

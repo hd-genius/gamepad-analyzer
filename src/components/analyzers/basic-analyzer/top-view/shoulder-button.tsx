@@ -1,6 +1,6 @@
 import { ButtonProps } from "../button-props";
 import { Handedness } from "./handedness";
-import drawingStyles from "../../drawing/drawing.module.css";
+import drawingStyles from "../../drawing/drawing.module.scss";
 import classNames from "classnames";
 
 interface ShoulderButtonProps extends ButtonProps {

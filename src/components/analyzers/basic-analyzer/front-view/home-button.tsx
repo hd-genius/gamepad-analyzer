@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import drawingStyles from "../../drawing/drawing.module.css";
+import drawingStyles from "../../drawing/drawing.module.scss";
 import { ButtonProps } from "../button-props";
 import { PositionableProps } from "../../drawing";
 

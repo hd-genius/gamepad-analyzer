@@ -1,11 +1,3 @@
-.filled {
-    fill: var(--drawing-outline-color);
-}
-
-.outlined:not(.filled, .pressed, .empty) {
-    fill: var(--drawing-fill-color);
-}
-
 .outlined {
     stroke: var(--drawing-outline-color);
     stroke-width: calc(0.264583px * var(--drawing-scale-factor, 1));
@@ -14,6 +6,14 @@
     stroke-dasharray: none;
     stroke-opacity: 1;
     fill-opacity: 1;
+    
+    &:not(.filled, .pressed, .empty) {
+        fill: var(--drawing-fill-color);
+    }
+}
+
+.filled {
+    fill: var(--drawing-outline-color);
 }
 
 .empty {
