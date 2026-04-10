@@ -4,6 +4,7 @@ import { GamepadContext } from "../../contexts";
 import { useAllGamepads } from "../../hooks";
 import styles from "./toolbar.module.scss";
 import { Analyzers } from "../../domain";
+import { FeatureFlag } from "../feature-flag";
 
 export const Toolbar = () => {
     const gamepads = useAllGamepads();
@@ -44,7 +45,9 @@ export const Toolbar = () => {
                     <AnalyzerOption type={Analyzers.BASIC} />
                     <AnalyzerOption type={Analyzers.JOYSTICK} />
                     <AnalyzerOption type={Analyzers.TRIGGER} />
-                    <AnalyzerOption type={Analyzers.HAPTIC} />
+                    <FeatureFlag name="haptic_analyzer">
+                        <AnalyzerOption type={Analyzers.HAPTIC} />
+                    </FeatureFlag>
                 </select>
             </div>
         </div>
